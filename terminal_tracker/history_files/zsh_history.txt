@@ -1,0 +1,1171 @@
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+lli output
+lli output
+lli output
+lli output
+lli output
+lli output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+cd lib
+ocamlbuild microc.ml
+ocamlbuild microc.native
+ocamlbuild -pkgs llvm microc.native
+./microc.native -l test.mc > test.out
+lli test.out
+cd ..
+git status
+git add lib/coalaparse.mly
+git add lib/codegen.ml
+git add lib/semant.ml
+git add lib/test.mc
+git add lib/test.native
+git add lib/test.native
+git commit -m "Indexing for int works, string has semant issues, some error"
+git push origin arrat
+git push origin array
+git stash
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+dune exec -- bin/main.exe -l lib/test.mc > output
+git status
+lli output
+git status
+git add lib/codegen.ml
+git add lib/semant.ml
+git add lib/test.mc
+git commit -m "Add printing for bool"
+git push origin array
+dune exec -- bin/main.exe -p lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+git status
+git stash
+git checkout main
+git branch comparison
+git checkout comparison
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -a lib/test.mc
+dune build bin/main.exe
+dune exec -- bin/main.exe -a lib/test.mc
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -s lib/test.mc
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+git add lib/ast.ml
+git add lib/coalaparse.mly
+git add lib/codegen.ml
+git add lib/scanner.mll
+git add lib/semant.ml
+git commit -m "Add comparisons and Modulo"
+git push origin comparison
+git checkout main
+git pull origin comparison
+git status
+git push origin main
+git branch for
+git checkout for
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+git add lib/ast.ml
+git add lib/coalaparse.mly
+git add lib/codegen.ml
+git add lib/sast.ml
+git add lib/scanner.mll
+git add lib/semant.ml
+git commit -m "Added for loops"
+git push origin for
+git checkout main
+git pull origin for
+git push origin main
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git branch
+git branch float
+git checkout float
+git checkout main
+git add .
+git commit -m "Not complete"
+git status
+git add .
+git status
+git commit -m "delete log files"
+git branch
+git checkout float
+git status
+git checkout main
+git reset
+git status
+git reset --hard
+git status
+git log
+git reset 16ee5c3add48e7696482b1d309353be5f0aced8f
+git status
+git revert 16ee5c3add48e7696482b1d309353be5f0aced8f
+git log
+git revert 4978def90f249de835a9beaf2c19dc5abd5c246c
+git log
+git status
+git reset --hard
+git reset --hard
+git log
+git reset 5759861c1e5d228642dca34cbf98306e2a204c21
+git checkout float
+git branch -d float
+git branch -D float
+git branch float
+git checkout float
+git push origin float
+git add .
+git status
+git commit -m "not complete"
+git push origin float
+git checkout main
+git push orgin main
+git push origin main
+git log
+git pull
+git checkout float
+git checkout main
+git pop
+git stash pop
+git branch
+git checkout float
+git stash
+git stash push
+afijshkesgrtoh]
+git stash
+git stash
+git log
+git revert d18d025325c4ac4f7e000578b68a0548b2b3dec0
+git branch
+git checkout for
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output2
+lli output2
+dune exec -- bin/main.exe -l lib/test.mc > output2
+lli output2
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output2
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+lli output
+git stash
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+git add lib/codegen.ml
+git commit -m "fixed greater than"
+git push origin for
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -s lib/test.mc
+dune exec -- bin/main.exe -s lib/test.mc
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+cat output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+git add lib/codegen.ml
+git commit -m "Fixed for-while loops"
+git push origin for
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune test
+git status
+git stash
+git checkout array
+git checkout array
+git pull origin array
+git checkout main
+git pull origin main
+git log
+git branch char
+git checkout char
+dune build bin/main.ml
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -a lib/test.mc > output
+dune exec -- bin/main.exe -a lib/test.mc
+dune exec -- bin/main.exe -s lib/test.mc
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+git add .
+git status
+git status
+git commit -m "completed char\
+"
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+git status
+git status
+git commit -m "FLoat primitive added"
+git push origin char
+git checkout main
+git pull origin main
+git branch mult
+git checkout mult
+git pull origin mult
+dune tests
+dune test
+dune build bin/main.exe
+dune test
+dune exec -- bin/main.exe -l test/tests/test-mult1 > output
+dune exec -- bin/main.exe -l test/tests/test-mult1.mc > output
+lli output
+dune test
+dune test
+git status
+git add test/tests/test-mult1.out
+git commit -m "Fixed mult test"
+git status
+git push origin mult
+git checkout char
+git pull origin main
+dune test
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune build bin/main.exe
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+git status
+git commit -m "Float operations"
+git push origin char
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+git add lib/scanner.mll
+git commit -m "Fixed char"
+git branch
+git push origin char
+git checkout for
+git stash
+git checkout for
+git pull origin main
+git stash
+git revert
+git log
+git revert bf281d8f08be68d2cc5676b6c9e91da147316a7b
+git checkout main
+git pull origin
+git branch for-new
+git checkout for-new
+git merge origin for
+git pull origin for
+git checkout char
+dune build bin/main.exe
+git checkout main
+git pull --all
+git merge for
+git checkout for
+git staus
+git status
+git status
+git checkout for
+git log
+cd ..
+cd ..
+cd ..
+cd PLT-code
+mkdir clone
+cd clone
+git clone https://github.com/MiloniAtal/coala-PLT.git
+ls
+cd coala-PLT
+cd coala
+git checkout for
+git merge main
+cd ..
+cd ..
+cd ..
+rm -r clone
+cd coala-PLT
+cd coala
+git branch
+dune build
+dune build bin/main.ml
+dune build bin/main.exe
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git status
+dune exec -- bin/main.exe -l lib/test.mc > output
+git status
+lli output
+git status
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+git add .
+git status
+git status
+git commit -m "Readded forloops"
+git push origin for
+git status
+git branch
+git checkout char
+git checkout main
+git pull origin
+git merge char
+git push origin main
+dune build bin/main.exe
+dune exec -- bin/main.exe -l test/demo/control.mc > test/demo/control.out
+lli test/demo/control.out
+dune exec -- bin/main.exe -l test/demo/control.mc > test/demo/control.out
+lli test/demo/control.out
+dune exec -- bin/main.exe -l test/demo/control.mc > test/demo/control.out
+lli test/demo/control.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.
+lli test/demo/declare.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.out
+git add demo
+git add test/demo/
+git commit -m "Added demo for control and declare"
+git push origin main
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+dune exec -- bin/main.exe -l lib/test.mc > output
+cd Project/buddy-CCBD/chat
+npm start
+npm run build
+cd coala-PLT/coala
+git status
+git stash
+git pull orgin
+git pull orgin main
+git pull origin main
+git pull origin main
+dune build bin/main.exe
+dune exec -- bin/main.exe -l test/demo/array.mc
+dune exec -- bin/main.exe -l test/demo/array.mc > test/demo/array.out
+lli array.out
+lli test/demo/array.out
+dune exec -- bin/main.exe -l test/demo/array.mc > test/demo/array.out
+lli test/demo/array.out
+dune exec -- bin/main.exe -l test/demo/data_types.mc > test/demo/data_types.out
+lli test/demo/data_types.
+lli test/demo/data_types.out
+dune exec -- bin/main.exe -l test/demo/operations.mc > test/demo/operations.out
+lli test/demo/operations.
+lli test/demo/operations.out
+dune exec -- bin/main.exe -l test/demo/control.mc > test/demo/control.out
+lli test/demo/control.out
+dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+lli test/demo/declare.out
+dune exec -- bin/main.exe -l test/demo/array.mc > test/demo/array.out
+lli test/demo/array.out
+dune exec -- bin/main.exe -l test/demo/array.mc > test/demo/array.out
+lli test/demo/array.out
+dune exec -- bin/main.exe -l test/demo/data_types.mc > test/demo/data_types.out
+dune exec -- bin/main.exe -l test/demo/data_types.mc > test/demo/data_types.out
+lli test/demo/data_types.out
+lli test/demo/array.out
+lli test/demo/data_types.
+lli test/demo/data_types.out
+lli test/demo/operations.out
+lli test/demo/control.out
+lli test/demo/declare.out
+lli test/demo/array.out
+lli test/demo/data_types.out
+lli test/demo/operations.out
+lli test/demo/declare.out
+lli test/demo/control.out
+lli test/demo/array.out
+lli test/demo/data_types.out
+lli test/demo/operations.out
+lli test/demo/declare.out
+lli test/demo/control.out
+git stash
+git checkout testing
+dune test
+dune test
+dune test
+dune test
+git commit -m "fixed test cases"
+git add test/tests/test-concat-string.out
+git add test/tests/test-mult-neg.out
+git add test/tests/test-negative-1.out
+git commit -m "Fixed tests"
+git status
+git status
+git add .
+git push origin testing
+git checkout main
+git pull origin main
+git checkout testing
+git merge main
+git status
+git push origin testing
+jupyter notebook
+mkdir Downloads/Nvidia
+ls Downloads/NVIDIA
+mv Nvidia\ Internship.ipynb Downloads/NVIDIA
+cd Downloads/NVIDIA
+mkdir assignment
+mv Nvidia\ Internship.ipynb assignment
+cd assignment
+jupyter notebook
+cd assignment
+cd openmp
+gcc -fopenmp hello.c -o hello -ldl
+brew install libomp
+\
+  
+export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+gcc -fopenmp hello.c -o hello -ldl
+CPPFLAGS += -Xclang -fopenmp\
+    LDFLAGS += -lomp
+export CPPFLAGS += -Xclang -fopenmp
+export CPPFLAGS = -fopenmp
+clang -c omp.c -fopenmp
+clang -c hello.c -fopenmp
+brew install libopenmp
+brew install llvm libomp
+export CPP=/usr/local/opt/llvm/bin/clang
+clang -c hello.c -fopenmp
+pip install cpt
+clang -c hello.c -fopenmp
+gcc -fopenmp hello.c -o hello -ldl
+clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp  hellp.c -o main
+clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp  hello.c -o main
+clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp  hello.c -o main
+clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib  hello.c -o main
+cd ..
+clang read.c
+clang read.c
+gcc read.c
+gcc read.c
+gcc read.cpp
+history
+/usr/bin/clang++
+/usr/bin/clang++ read.c
+/usr/bin/clang read.c
+/usr/bin/clang read.c
+pythont test.py
+python test.py
+python test.py
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install --cask microsoft-intellipoint
+cd Desktop/Main
+ls
+cd Courses/Columbia\ Courses/
+ls
+cd SPRING\ 2023
+ls
+cd Open\ Source\ Dev
+git clone https://github.com/MiloniAtal/project-proposals-s2023.git
+ls
+cd project-proposals-s2023
+ls
+code .
+git status
+git add ma4338.md
+git commit -m "Added Project Proposal and Contribution
+git commit -m "Added Project Proposal and Contribution"
+git push origin master
+git commit -m "Minor changes"
+git add ma4338.md
+git commit -m "Minor changes"
+git staus
+git status
+cd TrajoptReference_Dev
+python test
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+python multi_mdp.py
+history
+git clone --recurse-submodules https://github.com/osqp/osqp-python
+cd osqp-python
+pip install .
+python src/osqp/tests
+python src/osqp/tests/basic_test.py
+pip unistall .
+cd ..
+rm -r osqp-python
+ls
+sudo rm -r osqp-python
+s
+ls
+python testPend.jl
+cd TrajoptReference_Dev
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+testQu
+python testIIWA.py
+testPen
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testIIWA.py
+python testIIWA.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testIIWA.py
+python testIIWA.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testIIWA.py
+python testIIWA.py
+python testIIWA.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py
+python testPendulum.py > temp.txt
+python testPendulum.py > temp.txt
+git status
+git pull
+git checkout HW1
+git checkout -b HW1
+git push origin HW1
+mvn
+mvn -v
+cd .ssh
+ls -al
+/opt/homebrew/bin/python3.11
+cd HW1
+python trigram_model.py
+python trigram_model.py
+python trigram_model.py
+python -i trigram_model.py hw1_data/brown_test.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python trigram_model.py
+python trigram_model.py
+python -i trigram_model.py [corpus_file]
+python -i trigram_model.py hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python
+jupyter notebook
+cat ~/.bash_history > history_backup
+cat ~/.bash_history
+ls /home/
+history
+cd downloads
+history
+scp a2rlab@abox2.barnard.edu:/home/a2rlab/ppcg/parallelCG/cg_v4/linsys/a.out 
+ls
+mkdir a
+scp a2rlab@abox2.barnard.edu:/home/a2rlab/ppcg/parallelCG/cg_v4/linsys/a.out a
+ls a
+scp a2rlab@abox2.barnard.edu:/home/a2rlab/ppcg/linsys_tester/linsys_test a
+vim /.aws/
+ls /.aws
+ls /.aws/credentials
+ls ~/.aws/credentials
+vim ~/.aws/credentials
+boto3
+boto
+mvn -v
+ls /opt
+ls /opt/homebrew/m
+ls /opt/homebrew/
+ls /opt/homebrew/opt
+echo $JAVA_HOME
+java -v
+java -version
+touch .bash_profile
+open -e .bash_profile
+open -e .bash_profile
+ls
+unzip apache-maven-3.6.3-bin.zip
+unzip apache-maven-4.0.0-alpha-4-bin.zip
+open -e .bash_profile
+source .bash_profile
+mvn -v
+mvn -version
+ls /Applications
+ls
+open -e .bash_profile
+source .bash_profile
+mvn -v
+ls ~/opt/a
+ls ~/opt/
+ls ~/opt/anaconda3
+ls ~/opt/anaconda3b
+ls ~/opt/anaconda3/bin
+maven
+which maven
+ls
+ls apache-maven-4.0.0-alpha-4
+ls apache-maven-4.0.0-alpha-4/bin
+ls apache-maven-4.0.0-alpha-4/bin/mvn
+apache-maven-4.0.0-alpha-4/bin/mvn
+apache-maven-4.0.0-alpha-4/bin/mvn -v
+vim ~/.aws/credentials
+ls ~/.aws/credentials
+ls
+apache-maven-4.0.0-alpha-4/bin/mvn
+apache-maven-4.0.0-alpha-4/bin/mvn RunEC2.java
+apache-maven-4.0.0-alpha-4/bin/mvn run
+mvn archetype:generate \
+  -DgroupId=[package-name] \
+  -DartifactId=[project-name] \
+  -DarchetypeArtifactId=maven-archetype-quickstart \
+  -DinteractiveMode=false 
+mvn -B archetype:generate \\
+  -DarchetypeGroupId=org.apache.maven.archetypes \\
+  -DgroupId=org.example.basicapp \\
+  -DartifactId=myapp
+apache-maven-4.0.0-alpha-4/bin/mvn -B archetype:generate \\
+  -DarchetypeGroupId=org.apache.maven.archetypes \\
+  -DgroupId=org.example.basicapp \\
+  -DartifactId=myapp
+apache-maven-4.0.0-alpha-4/bin/mvn -B archetype:generate \\
+  -DarchetypeGroupId=org.apache.maven.archetypes \\
+  -DgroupId=org.example.basicapp \\
+  -DartifactId=myapp
+apache-maven-4.0.0-alpha-4/bin/mvn -B archetype:generate \\
+  -DarchetypeGroupId=org.apache.maven.archetypes \\
+  -DgroupId=org.example.basicapp \\
+  -DartifactId=myapp
+cd myapp
+apache-maven-4.0.0-alpha-4/bin/mvn run
+../apache-maven-4.0.0-alpha-4/bin/mvn run
+mvn myapp
+../apache-maven-4.0.0-alpha-4/bin/mvn myapp
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+java -cp target/myapp-1.0-SNAPSHOT.jar com.mycompany.app.App
+java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp
+java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp
+../apache-maven-4.0.0-alpha-4/bin/mvn test
+../apache-maven-4.0.0-alpha-4/bin/mvn test
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp.App
+vim ~/.aws/credentials
+cd ..
+pip install boto3
+python CreateEC2.py
+python CreateEC2.py
+python CreateEC2.py
+cd myapp
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp.App
+java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp.App
+../apache-maven-4.0.0-alpha-4/bin/mvn package
+java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp.App
+vim ~/.aws/config
+git branch
+git checkout main
+git pull
+git pull
+git checkout HW1
+git pull
+git pull origin HW1
+git statu
+git status
+git switch -B HW2
+git switch -c HW2
+git rebase -i main
+git checkout HW1
+git checkout HW2-again
+git rebase -i main
+git rebase --continue
+git rebase --continue
+git rebase --abort
+git status
+git log
+git rebase -i main
+git log
+git checkout HW2
+git push origin HW2
+git log
+git rebase -i HEAD~2
+git log
+git status
+git push origin HW2
+git pull
+git pull HW2
+git pull origin HW2
+git log
+git status
+git commit -m "Merge"
+git log
+git rebase -i HEAD~2
+git status
+git log
+git push origin HW2
+git push --force -u origin HW2
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+cd HW1
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py
+python trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python -i trigram_model.py hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+java -version
+mvn -v
+git status
+git pull origin HW2
+git status
+git add students/ma4338.md
+git commit -m "Corrected Link"
+git log
+git checkout main
+git pull origin main
+git checkout HW2
+git log
+git rebase -i main
+git log
+git push origin HW2
+git push --force -u origin HW2
+history
+ls
+cd HW1
+python trigram_mode2.py hw1_data/brown_train hw1_data/brown_test
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+cd HW1
+python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt

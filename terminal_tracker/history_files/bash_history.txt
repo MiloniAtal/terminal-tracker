@@ -1,0 +1,114 @@
+docker run --name repo alpine/git clone https://github.com/docker/getting-started.git
+docker cp repo:/git/getting-started/ .
+cd getting-started
+docker build -t docker101tutorial .
+docker run -d -p 80:80 --name docker-tutorial docker101tutorial
+docker run -d -p 80:80 --name docker-tutorial docker101tutorial
+ls -a /Users/miloniatal/
+# some text as a marker
+history
+ls "#marking"
+ls "# marking"
+ls
+ls -s "# marker"
+ls #trial
+history
+ls #trial
+shopt -s histappend
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
+Copy
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
+Copy
+pstree
+echo "T1"
+history
+vim ~/.bashrc
+tail -2 .bashrc
+tail -2 ~/.bashrc
+ echo "Checking from Terminal 1" && history 5
+echo "T@"
+echo "This one is from Terminal 2"
+echo "Terminal 3 here.. "
+echo "T3"
+echo "Terminal 2"
+echo "T1"
+history
+history
+history
+echo "This should be appended"
+history
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
+history
+echo "Now try from t2"
+history
+history
+vim ~/.bashrc
+echo "testing"
+history
+history
+now try
+history
+history
+vim ~/.bashrc
+echo "T2"
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+echo "T1"
+history
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+echo "T1"
+echo "T2"
+history
+echo "T2"
+history
+bash configuring
+cd terminal-tracker/
+bash configuring
+history
+echo "Hi there"
+cd terminal-tracker/
+bash configuring 
+echo "Hi there 2"
+history
+vim ~/.bashrc
+source ~/.bashrc
+vim ~/.bashrc
+#1676488198
+source ~/.bashrc
+#1676488203
+history
+#1676488509
+history
+#1676488535
+vim ~/.bashrc
+#1676488567
+source ~/.bashrc
+#1676488575
+history
+#1676488620
+vim ~/.bashrc
+#1676488643
+source ~/.bashrc
+#1676488646
+history
+#1676488651
+source ~/.bashrc
+#1676488655
+history
+history
+source ~/.bashrc
+history
+source ~/.bashrc
+history
+source ~/.bashrc
+ls
+history
+ls
+history
+ls #tag
+history
+vim ~/.bashrc
+source ~/.bashrc
+ls
+history
+ls
+history
