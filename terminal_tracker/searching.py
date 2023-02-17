@@ -46,8 +46,8 @@ def find_most_frequent_start(file):
 def find_top(file, t=10):
     return "Not implemented yet"
 
-if __name__ == "__main__":
-    file = "./history_files/zsh_history.txt"
-    print(find_most_frequent_start(file))
+# if __name__ == "__main__":
+#     file = "./history_files/zsh_history.txt"
+#     print(find_most_frequent_start(file))
     
     
