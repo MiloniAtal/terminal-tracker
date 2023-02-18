@@ -1,0 +1,371 @@
+: 1676578148:0;dune exec -- bin/main.exe -l lib/test.mc
+: 1676578148:0;cd lib
+: 1676578148:0;ocamlbuild microc.ml
+: 1676578148:0;ocamlbuild microc.native
+: 1676578148:0;ocamlbuild -pkgs llvm microc.native
+: 1676578148:0;./microc.native -l test.mc > test.out
+: 1676578148:0;lli test.out
+: 1676578148:0;git add lib/test.native
+: 1676578148:0;git commit -m "Indexing for int works, string has semant issues, some error"
+: 1676578148:0;git push origin arrat
+: 1676578148:0;git add lib/test.mc
+: 1676578148:0;git commit -m "Add printing for bool"
+: 1676578148:0;git push origin array
+: 1676578148:0;dune exec -- bin/main.exe -p lib/test.mc
+: 1676578148:0;git branch comparison
+: 1676578148:0;git checkout comparison
+: 1676578148:0;git commit -m "Add comparisons and Modulo"
+: 1676578148:0;git push origin comparison
+: 1676578148:0;git pull origin comparison
+: 1676578148:0;git branch for
+: 1676578148:0;git add lib/ast.ml
+: 1676578148:0;git add lib/coalaparse.mly
+: 1676578148:0;git add lib/sast.ml
+: 1676578148:0;git add lib/semant.ml
+: 1676578148:0;git commit -m "Added for loops"
+: 1676578148:0;git commit -m "Not complete"
+: 1676578148:0;git commit -m "delete log files"
+: 1676578148:0;git reset
+: 1676578148:0;git reset 16ee5c3add48e7696482b1d309353be5f0aced8f
+: 1676578148:0;git revert 16ee5c3add48e7696482b1d309353be5f0aced8f
+: 1676578148:0;git revert 4978def90f249de835a9beaf2c19dc5abd5c246c
+: 1676578148:0;git reset 5759861c1e5d228642dca34cbf98306e2a204c21
+: 1676578148:0;git branch -d float
+: 1676578148:0;git branch -D float
+: 1676578148:0;git branch float
+: 1676578148:0;git commit -m "not complete"
+: 1676578148:0;git push origin float
+: 1676578148:0;git push orgin main
+: 1676578148:0;git pop
+: 1676578148:0;git stash pop
+: 1676578148:0;git checkout float
+: 1676578148:0;git stash push
+: 1676578148:0;afijshkesgrtoh]
+: 1676578148:0;git revert d18d025325c4ac4f7e000578b68a0548b2b3dec0
+: 1676578148:0;lli output2
+: 1676578148:0;dune exec -- bin/main.exe -l lib/test.mc > output2
+: 1676578148:0;git commit -m "fixed greater than"
+: 1676578148:0;cat output
+: 1676578148:0;git add lib/codegen.ml
+: 1676578148:0;git commit -m "Fixed for-while loops"
+: 1676578148:0;git checkout array
+: 1676578148:0;git pull origin array
+: 1676578148:0;git branch char
+: 1676578148:0;dune exec -- bin/main.exe -a lib/test.mc > output
+: 1676578148:0;dune exec -- bin/main.exe -a lib/test.mc
+: 1676578148:0;dune exec -- bin/main.exe -s lib/test.mc
+: 1676578148:0;git commit -m "completed char\
+"
+: 1676578148:0;git commit -m "FLoat primitive added"
+: 1676578148:0;git branch mult
+: 1676578148:0;git checkout mult
+: 1676578148:0;git pull origin mult
+: 1676578148:0;dune tests
+: 1676578148:0;dune exec -- bin/main.exe -l test/tests/test-mult1 > output
+: 1676578148:0;dune exec -- bin/main.exe -l test/tests/test-mult1.mc > output
+: 1676578148:0;git add test/tests/test-mult1.out
+: 1676578148:0;git commit -m "Fixed mult test"
+: 1676578148:0;git push origin mult
+: 1676578148:0;git commit -m "Float operations"
+: 1676578148:0;git add lib/scanner.mll
+: 1676578148:0;git commit -m "Fixed char"
+: 1676578148:0;git push origin char
+: 1676578148:0;git revert
+: 1676578148:0;git revert bf281d8f08be68d2cc5676b6c9e91da147316a7b
+: 1676578148:0;git branch for-new
+: 1676578148:0;git checkout for-new
+: 1676578148:0;git merge origin for
+: 1676578148:0;git pull origin for
+: 1676578148:0;git pull --all
+: 1676578148:0;git merge for
+: 1676578148:0;cd PLT-code
+: 1676578148:0;mkdir clone
+: 1676578148:0;cd clone
+: 1676578148:0;git clone https://github.com/MiloniAtal/coala-PLT.git
+: 1676578148:0;git checkout for
+: 1676578148:0;rm -r clone
+: 1676578148:0;cd coala-PLT
+: 1676578148:0;cd coala
+: 1676578148:0;dune build
+: 1676578148:0;dune build bin/main.ml
+: 1676578148:0;git commit -m "Readded forloops"
+: 1676578148:0;git push origin for
+: 1676578148:0;git checkout char
+: 1676578148:0;git pull origin
+: 1676578148:0;git merge char
+: 1676578148:0;lli test/demo/declare.
+: 1676578148:0;git add demo
+: 1676578148:0;git add test/demo/
+: 1676578148:0;git commit -m "Added demo for control and declare"
+: 1676578148:0;git push origin main
+: 1676578148:0;lli output
+: 1676578148:0;dune exec -- bin/main.exe -l lib/test.mc > output
+: 1676578148:0;cd Project/buddy-CCBD/chat
+: 1676578148:0;npm start
+: 1676578148:0;npm run build
+: 1676578148:0;cd coala-PLT/coala
+: 1676578148:0;git pull orgin
+: 1676578148:0;git pull orgin main
+: 1676578148:0;dune build bin/main.exe
+: 1676578148:0;dune exec -- bin/main.exe -l test/demo/array.mc
+: 1676578148:0;lli array.out
+: 1676578148:0;dune exec -- bin/main.exe -l test/demo/operations.mc > test/demo/operations.out
+: 1676578148:0;lli test/demo/operations.
+: 1676578148:0;dune exec -- bin/main.exe -l test/demo/control.mc > test/demo/control.out
+: 1676578148:0;dune exec -- bin/main.exe -l test/demo/declare.mc > test/demo/declare.out
+: 1676578148:0;dune exec -- bin/main.exe -l test/demo/array.mc > test/demo/array.out
+: 1676578148:0;dune exec -- bin/main.exe -l test/demo/data_types.mc > test/demo/data_types.out
+: 1676578148:0;lli test/demo/data_types.
+: 1676578148:0;lli test/demo/array.out
+: 1676578148:0;lli test/demo/data_types.out
+: 1676578148:0;lli test/demo/operations.out
+: 1676578148:0;lli test/demo/declare.out
+: 1676578148:0;lli test/demo/control.out
+: 1676578148:0;dune test
+: 1676578148:0;git commit -m "fixed test cases"
+: 1676578148:0;git add test/tests/test-concat-string.out
+: 1676578148:0;git add test/tests/test-mult-neg.out
+: 1676578148:0;git add test/tests/test-negative-1.out
+: 1676578148:0;git commit -m "Fixed tests"
+: 1676578148:0;git checkout testing
+: 1676578148:0;git push origin testing
+: 1676578148:0;mkdir Downloads/Nvidia
+: 1676578148:0;ls Downloads/NVIDIA
+: 1676578148:0;mv Nvidia\ Internship.ipynb Downloads/NVIDIA
+: 1676578148:0;cd Downloads/NVIDIA
+: 1676578148:0;mkdir assignment
+: 1676578148:0;mv Nvidia\ Internship.ipynb assignment
+: 1676578148:0;cd assignment
+: 1676578148:0;cd openmp
+: 1676578148:0;brew install libomp
+: 1676578148:0;\
+  
+: 1676578148:0;export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+: 1676578148:0;export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+: 1676578148:0;CPPFLAGS += -Xclang -fopenmp\
+    LDFLAGS += -lomp
+: 1676578148:0;export CPPFLAGS += -Xclang -fopenmp
+: 1676578148:0;export CPPFLAGS = -fopenmp
+: 1676578148:0;clang -c omp.c -fopenmp
+: 1676578148:0;brew install libopenmp
+: 1676578148:0;brew install llvm libomp
+: 1676578148:0;export CPP=/usr/local/opt/llvm/bin/clang
+: 1676578148:0;pip install cpt
+: 1676578148:0;clang -c hello.c -fopenmp
+: 1676578148:0;gcc -fopenmp hello.c -o hello -ldl
+: 1676578148:0;clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp  hellp.c -o main
+: 1676578148:0;clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp  hello.c -o main
+: 1676578148:0;clang -Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib  hello.c -o main
+: 1676578148:0;clang read.c
+: 1676578148:0;gcc read.c
+: 1676578148:0;gcc read.cpp
+: 1676578148:0;/usr/bin/clang++
+: 1676578148:0;/usr/bin/clang++ read.c
+: 1676578148:0;/usr/bin/clang read.c
+: 1676578148:0;pythont test.py
+: 1676578148:0;python test.py
+: 1676578148:0;/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+: 1676578148:0;brew install --cask microsoft-intellipoint
+: 1676578148:0;cd Desktop/Main
+: 1676578148:0;cd Courses/Columbia\ Courses/
+: 1676578148:0;cd SPRING\ 2023
+: 1676578148:0;cd Open\ Source\ Dev
+: 1676578148:0;git clone https://github.com/MiloniAtal/project-proposals-s2023.git
+: 1676578148:0;cd project-proposals-s2023
+: 1676578148:0;code .
+: 1676578148:0;git commit -m "Added Project Proposal and Contribution
+: 1676578148:0;git commit -m "Added Project Proposal and Contribution"
+: 1676578148:0;git push origin master
+: 1676578148:0;git add ma4338.md
+: 1676578148:0;git commit -m "Minor changes"
+: 1676578148:0;git staus
+: 1676578148:0;python test
+: 1676578148:0;python multi_mdp.py
+: 1676578148:0;git clone --recurse-submodules https://github.com/osqp/osqp-python
+: 1676578148:0;cd osqp-python
+: 1676578148:0;pip install .
+: 1676578148:0;python src/osqp/tests
+: 1676578148:0;python src/osqp/tests/basic_test.py
+: 1676578148:0;pip unistall .
+: 1676578148:0;rm -r osqp-python
+: 1676578148:0;sudo rm -r osqp-python
+: 1676578148:0;s
+: 1676578148:0;python testPend.jl
+: 1676578148:0;testQu
+: 1676578148:0;testPen
+: 1676578148:0;python testPendulum.py
+: 1676578148:0;python testPendulum.py > temp.txt
+: 1676578148:0;git checkout -b HW1
+: 1676578148:0;git push origin HW1
+: 1676578148:0;mvn
+: 1676578148:0;cd .ssh
+: 1676578148:0;ls -al
+: 1676578148:0;/opt/homebrew/bin/python3.11
+: 1676578148:0;python -i trigram_model.py hw1_data/brown_test.txt
+: 1676578148:0;python -i trigram_model.py [corpus_file]
+: 1676578148:0;jupyter notebook
+: 1676578148:0;cat ~/.bash_history > history_backup
+: 1676578148:0;cat ~/.bash_history
+: 1676578148:0;ls /home/
+: 1676578148:0;cd downloads
+: 1676578148:0;scp a2rlab@abox2.barnard.edu:/home/a2rlab/ppcg/parallelCG/cg_v4/linsys/a.out 
+: 1676578148:0;mkdir a
+: 1676578148:0;scp a2rlab@abox2.barnard.edu:/home/a2rlab/ppcg/parallelCG/cg_v4/linsys/a.out a
+: 1676578148:0;ls a
+: 1676578148:0;scp a2rlab@abox2.barnard.edu:/home/a2rlab/ppcg/linsys_tester/linsys_test a
+: 1676578148:0;vim /.aws/
+: 1676578148:0;ls /.aws
+: 1676578148:0;ls /.aws/credentials
+: 1676578148:0;boto3
+: 1676578148:0;boto
+: 1676578148:0;ls /opt
+: 1676578148:0;ls /opt/homebrew/m
+: 1676578148:0;ls /opt/homebrew/
+: 1676578148:0;ls /opt/homebrew/opt
+: 1676578148:0;echo $JAVA_HOME
+: 1676578148:0;java -v
+: 1676578148:0;touch .bash_profile
+: 1676578148:0;unzip apache-maven-3.6.3-bin.zip
+: 1676578148:0;unzip apache-maven-4.0.0-alpha-4-bin.zip
+: 1676578148:0;mvn -version
+: 1676578148:0;ls /Applications
+: 1676578148:0;open -e .bash_profile
+: 1676578148:0;source .bash_profile
+: 1676578148:0;ls ~/opt/a
+: 1676578148:0;ls ~/opt/
+: 1676578148:0;ls ~/opt/anaconda3
+: 1676578148:0;ls ~/opt/anaconda3b
+: 1676578148:0;ls ~/opt/anaconda3/bin
+: 1676578148:0;maven
+: 1676578148:0;which maven
+: 1676578148:0;ls apache-maven-4.0.0-alpha-4
+: 1676578148:0;ls apache-maven-4.0.0-alpha-4/bin
+: 1676578148:0;ls apache-maven-4.0.0-alpha-4/bin/mvn
+: 1676578148:0;apache-maven-4.0.0-alpha-4/bin/mvn -v
+: 1676578148:0;ls ~/.aws/credentials
+: 1676578148:0;apache-maven-4.0.0-alpha-4/bin/mvn
+: 1676578148:0;apache-maven-4.0.0-alpha-4/bin/mvn RunEC2.java
+: 1676578148:0;mvn archetype:generate \
+  -DgroupId=[package-name] \
+  -DartifactId=[project-name] \
+  -DarchetypeArtifactId=maven-archetype-quickstart \
+  -DinteractiveMode=false 
+: 1676578148:0;mvn -B archetype:generate \\
+  -DarchetypeGroupId=org.apache.maven.archetypes \\
+  -DgroupId=org.example.basicapp \\
+  -DartifactId=myapp
+: 1676578148:0;apache-maven-4.0.0-alpha-4/bin/mvn -B archetype:generate \\
+  -DarchetypeGroupId=org.apache.maven.archetypes \\
+  -DgroupId=org.example.basicapp \\
+  -DartifactId=myapp
+: 1676578148:0;apache-maven-4.0.0-alpha-4/bin/mvn run
+: 1676578148:0;../apache-maven-4.0.0-alpha-4/bin/mvn run
+: 1676578148:0;mvn myapp
+: 1676578148:0;../apache-maven-4.0.0-alpha-4/bin/mvn myapp
+: 1676578148:0;java -cp target/myapp-1.0-SNAPSHOT.jar com.mycompany.app.App
+: 1676578148:0;java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp
+: 1676578148:0;../apache-maven-4.0.0-alpha-4/bin/mvn test
+: 1676578148:0;vim ~/.aws/credentials
+: 1676578148:0;cd ..
+: 1676578148:0;pip install boto3
+: 1676578148:0;python CreateEC2.py
+: 1676578148:0;cd myapp
+: 1676578148:0;../apache-maven-4.0.0-alpha-4/bin/mvn package
+: 1676578148:0;java -cp target/myapp-1.0-SNAPSHOT.jar org.example.basicapp.App
+: 1676578148:0;vim ~/.aws/config
+: 1676578148:0;git pull origin HW1
+: 1676578148:0;git statu
+: 1676578148:0;git switch -B HW2
+: 1676578148:0;git switch -c HW2
+: 1676578148:0;git checkout HW1
+: 1676578148:0;git checkout HW2-again
+: 1676578148:0;git rebase --continue
+: 1676578148:0;git rebase --abort
+: 1676578148:0;git pull HW2
+: 1676578148:0;git commit -m "Merge"
+: 1676578148:0;git rebase -i HEAD~2
+: 1676578148:0;python trigram_model.py
+: 1676578148:0;python trigram_model.py hw1_data/brown_train.txt
+: 1676578148:0;python -i trigram_model.py hw1_data/brown_train.txt
+: 1676578148:0;python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
+: 1676578148:0;java -version
+: 1676578148:0;mvn -v
+: 1676578148:0;git pull origin HW2
+: 1676578148:0;git add students/ma4338.md
+: 1676578148:0;git commit -m "Corrected Link"
+: 1676578148:0;git checkout HW2
+: 1676578148:0;git rebase -i main
+: 1676578148:0;git push origin HW2
+: 1676578148:0;git push --force -u origin HW2
+: 1676578148:0;python trigram_mode2.py hw1_data/brown_train hw1_data/brown_test
+: 1676578148:0;python trigram_mode.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+: 1676578148:0;python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+: 1676578148:0;python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+: 1676578148:0;python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+: 1676479881:0;echo $HISTFILE
+: 1676479900:0;ls -la
+: 1676479905:0;ls -a
+: 1676479944:830;vim /Users/miloniatal/.zsh_history
+: 1676480786:0;vm /Users/miloniatal/.bash_history
+: 1676480793:136;vim /Users/miloniatal/.bash_history
+: 1676480937:12;vim /Users/miloniatal/.bash_profile
+: 1676480956:0;ls -a /Users/miloniatal
+: 1676489171:0;source ~/.zshrc
+: 1676489235:0;history -E 10
+: 1676489662:0;setopt interactivecomments
+: 1676489666:0;ls #marker
+: 1676489685:0;vim ~/.zshrc
+: 1676489953:0;ls -a ~/.
+: 1676489994:0;cd terminal-tracker
+: 1676490021:0;~/.zsh_history > zsh_history
+: 1676490038:0;~/.bash_history > bash_history.txt
+: 1676490041:0;~/.zsh_history > zsh_history.txt
+: 1676490147:0;cp ~/.zsh_history zsh_history.txt
+: 1676490176:0;cp ~/.bash_history bash_history.txt
+: 1676491645:0;python src/main.py
+: 1676492511:0;git commit -m "Initial work"
+: 1676492566:0;git pull
+: 1676492572:0;git push origin "basic"
+: 1676492675:0;git switch -c basic
+: 1676492847:0;git --reset hard
+: 1676492854:0;git reset --hard
+: 1676492873:0;git log
+: 1676492892:0;git branch
+: 1676492918:0;git reset --hard HEAD^
+: 1676504668:0;cd HW1
+: 1676504687:0;python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+: 1676578136:0;cd TrajoptReference_Dev
+: 1676578148:0;git stash
+: 1676578160:0;python testIIWA.py
+: 1676578311:0;python testIIWA.py >> demo.txt
+: 1676657144:0;git switch -c template
+: 1676657279:0;ls
+: 1676657401:0;make test
+: 1676657591:0;make develop
+: 1676657772:0;make build
+: 1676657948:0;make lint
+: 1676658009:0;make format
+: 1676658068:0;make annotate
+: 1676658270:0;make coverage
+: 1676658638:0;make dist
+: 1676658708:0;python
+: 1676658944:0;git add .
+: 1676658993:0;git commit -m "Added package distribution"
+: 1676659096:0;git checkout main
+: 1676659100:0;git pull origin main
+: 1676659104:0;git checkout basic
+: 1676659111:0;git merge main
+: 1676659117:0;git status
+: 1676659142:0;git push origin basic
+: 1676660517:0;python terminal_tracker/searching.py
+: 1676660531:0;cd terminal_tracker
+: 1676661214:0;export HISTTIMEFORMAT="[%F %T] "
+: 1676661215:0;history
+: 1676661230:0;vim /.zsh_history
+: 1676661249:0;ls ~/.zsh_history
+: 1676661283:0;vim ~/.bash_history
+: 1676662203:0;export HISTTIMEFORMAT='%d/%m/%y %T '
+: 1676662254:0;vim ~/.zsh_profile
+: 1676662286:0;vim ~/.zsh_history
+: 1676662815:0;python searching.py
+: 1676662953:0;cp ~/.zsh_history history_files/zsh_history_timeframe.txt
