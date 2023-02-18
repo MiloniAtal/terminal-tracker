@@ -920,7 +920,7 @@ cd HW1
 python trigram_model.py
 python trigram_model.py
 python trigram_model.py
-python -i trigram_model.py hw1_data/brown_test.txt
+python -i trigram_model.py hw1_data/brown_test.txt #NLP
 python -i trigram_model.py hw1_data/brown_train.txt
 python -i trigram_model.py hw1_data/brown_train.txt
 python -i trigram_model.py hw1_data/brown_train.txt
@@ -932,16 +932,16 @@ python trigram_model.py
 python trigram_model.py
 python -i trigram_model.py [corpus_file]
 python -i trigram_model.py hw1_data/brown_train.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 python
 jupyter notebook
 cat ~/.bash_history > history_backup
@@ -1101,11 +1101,11 @@ git status
 git log
 git push origin HW2
 git push --force -u origin HW2
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 cd HW1
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
 python trigram_model.py
 python trigram_model.py hw1_data/brown_train.txt
@@ -1118,16 +1118,16 @@ python -i trigram_model.py hw1_data/brown_train.txt
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
 python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_train.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 java -version
 mvn -v
 git status
@@ -1148,24 +1148,25 @@ history
 ls
 cd HW1
 python trigram_mode2.py hw1_data/brown_train hw1_data/brown_test
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_mode2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
 cd HW1
-python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
-python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt
+python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP 
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python -i trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
+python trigram_model2.py hw1_data/brown_train.txt hw1_data/brown_test.txt #NLP
