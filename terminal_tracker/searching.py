@@ -2,6 +2,15 @@ from collections import defaultdict
 from operator import itemgetter
 import pandas as pd
 import datetime
+from argparse import ArgumentParser
+
+def argumentparser():
+    parser = ArgumentParser()
+    parser.add_argument("-f", "--file" , help="Path to history file")
+    parser.add_argument("-s", "--shell", choices=["bash", "zsh"], default="zsh", help="The shell being used")
+    parser.add_argument("-t","--time", type=bool, default=False, help="Is time being stored in the history file")
+    args = parser.parse_args()
+    return args
 
 #remove_duplicates=False
 class Preprocessing:
@@ -17,8 +26,7 @@ class Preprocessing:
         else:
             return self.convert_no_timeframe()
             
-
-    def covert_no_timeframe(self):
+    def convert_no_timeframe(self):
         data = []
         for command in open(self.file, "r"):
             command = command.replace('\n', '')
@@ -214,13 +222,13 @@ class SearchFile:
             print(command)
 
 if __name__ == "__main__":
-    file = "./history_files/bash_history_timeframe.txt"
-    
-    prep = Preprocessing(file, True, "bash")
-    print(prep.df)
-    ta = TimeAnalysis(file, "bash")
-    print(ta.remove_no_time_rows())
-    print(ta.search_day('2023-02-18'))
+    args = argumentparser()
+    # file = "./history_files/bash_history_timeframe.txt"
+    prep = Preprocessing(args.file, args.time, args.shell)
+    # print(prep.df)
+    # ta = TimeAnalysis(file, "bash")
+    # print(ta.remove_no_time_rows())
+    # print(ta.search_day('2023-02-18'))
     # print(tags.search("NLP"))
     # freq = FrequencyFile(file)
     # freq.print_top()
