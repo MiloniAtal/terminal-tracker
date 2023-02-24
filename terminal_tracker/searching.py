@@ -6,7 +6,9 @@ from argparse import ArgumentParser
 
 def argumentparser():
     parser = ArgumentParser()
-    parser.add_argument("square", help="display a square of a given number")
+    parser.add_argument("-f", "--file" , help="Path to history file")
+    parser.add_argument("-s", "--shell", choices=["bash", "zsh"], default="zsh", help="The shell being used")
+    parser.add_argument("-t","--time", type=bool, default=False, help="Is time being stored in the history file")
     args = parser.parse_args()
     return args
 
@@ -24,8 +26,7 @@ class Preprocessing:
         else:
             return self.convert_no_timeframe()
             
-
-    def covert_no_timeframe(self):
+    def convert_no_timeframe(self):
         data = []
         for command in open(self.file, "r"):
             command = command.replace('\n', '')
@@ -221,12 +222,9 @@ class SearchFile:
             print(command)
 
 if __name__ == "__main__":
-    print("Hello")
-    # args = argumentparser()
-    # print(args)
+    args = argumentparser()
     # file = "./history_files/bash_history_timeframe.txt"
-    
-    # prep = Preprocessing(file, True, "bash")
+    prep = Preprocessing(args.file, args.time, args.shell)
     # print(prep.df)
     # ta = TimeAnalysis(file, "bash")
     # print(ta.remove_no_time_rows())
