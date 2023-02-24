@@ -2,6 +2,13 @@ from collections import defaultdict
 from operator import itemgetter
 import pandas as pd
 import datetime
+from argparse import ArgumentParser
+
+def argumentparser():
+    parser = ArgumentParser()
+    parser.add_argument("square", help="display a square of a given number")
+    args = parser.parse_args()
+    return args
 
 #remove_duplicates=False
 class Preprocessing:
@@ -214,13 +221,16 @@ class SearchFile:
             print(command)
 
 if __name__ == "__main__":
-    file = "./history_files/bash_history_timeframe.txt"
+    print("Hello")
+    # args = argumentparser()
+    # print(args)
+    # file = "./history_files/bash_history_timeframe.txt"
     
-    prep = Preprocessing(file, True, "bash")
-    print(prep.df)
-    ta = TimeAnalysis(file, "bash")
-    print(ta.remove_no_time_rows())
-    print(ta.search_day('2023-02-18'))
+    # prep = Preprocessing(file, True, "bash")
+    # print(prep.df)
+    # ta = TimeAnalysis(file, "bash")
+    # print(ta.remove_no_time_rows())
+    # print(ta.search_day('2023-02-18'))
     # print(tags.search("NLP"))
     # freq = FrequencyFile(file)
     # freq.print_top()
