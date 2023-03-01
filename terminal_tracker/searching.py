@@ -25,7 +25,7 @@ class Preprocessing:
             return self.convert_timeframe()
         else:
             return self.convert_no_timeframe()
-            
+
     def convert_no_timeframe(self):
         data = []
         for command in open(self.file, "r"):
@@ -123,7 +123,6 @@ class FrequencyFile:
 
     def calc_full_command_freq(self):
         command_frequency = defaultdict(lambda: 0)
-
         for line in open(self.file, "r"):
             command_frequency[line] += 1
         return command_frequency
@@ -136,15 +135,21 @@ class FrequencyFile:
         return command_frequency
 
     def find_most_frequent(self):
-        return max(self.full_command_freq)
+        ff = self.full_command_freq
+        return max(ff, key=lambda x:ff[x])
 
     def find_most_frequent_start(self):
-        return max(self.start_command_freq)
+        ff = self.start_command_freq
+        return max(ff, key=lambda x:ff[x])
 
     def find_top_full(self, t=10):
+        if(t > len(self.full_command_sorted)):
+            return self.full_command_sorted
         return self.full_command_sorted[:t]
     
     def find_top_start(self, t=10):
+        if(t > len(self.start_command_sorted)):
+            return self.start_command_sorted
         return self.start_command_sorted[:t]
 
     def print_top(self, type="full", N=10):
@@ -178,8 +183,12 @@ class Tags:
         self.prep = Preprocessing(file, timeframe, shell)
         self.df = self.prep.df
 
-    def search(self, a):
+    def search_df(self, a):
         return self.df[self.df["Tags"].str.contains(a, case=False, na=False)]
+    
+    def search(self, a):
+        df = self.search_df(a)
+        return df["Command"].values.tolist()
 
 class TimeAnalysis:
     #TODO: reject files with no timeframe

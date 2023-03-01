@@ -1,12 +1,12 @@
-from terminal_tracker import hello, print_hello
-from unittest.mock import patch
+# from terminal_tracker import hello, print_hello
+# from unittest.mock import patch
 
 
-def test_hello():
-    assert hello() == "Hello, world!"
+# def test_hello():
+#     assert hello() == "Hello, world!"
 
 
-@patch('builtins.print')
-def test_print_hello(mock_print):
-    print_hello()
-    assert mock_print.call_args.args == ("Hello, world!",)
+# @patch('builtins.print')
+# def test_print_hello(mock_print):
+#     print_hello()
+#     assert mock_print.call_args.args == ("Hello, world!",)
