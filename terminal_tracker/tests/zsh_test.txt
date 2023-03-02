@@ -1,0 +1,11 @@
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+dune exec -- bin/main.exe -l lib/test.mc > output
+lli output
+lli output
+git status
+git stash
+git checkout main
+git branch comparison
+git checkout comparison
+python trigram_model2.py #NLP
