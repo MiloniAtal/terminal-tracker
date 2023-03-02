@@ -62,6 +62,7 @@ class Preprocessing:
                 #TODO: Currently assumes Unix timestamp
                 time = sep[0][2:].split(":")[0]
                 if(":" in time):
+                    #TODO: remove?
                     print(line)
                 pretty_time = datetime.datetime.fromtimestamp(int(time))
                 command = sep[1][:].replace('\n', '')
@@ -124,7 +125,7 @@ class FrequencyFile:
     def calc_full_command_freq(self):
         command_frequency = defaultdict(lambda: 0)
         for line in open(self.file, "r"):
-            command_frequency[line] += 1
+            command_frequency[line.replace('\n', '')] += 1
         return command_frequency
     
     def calc_start_command_freq(self):
@@ -135,12 +136,10 @@ class FrequencyFile:
         return command_frequency
 
     def find_most_frequent(self):
-        ff = self.full_command_freq
-        return max(ff, key=lambda x:ff[x])
+        return self.full_command_sorted[0][0]
 
     def find_most_frequent_start(self):
-        ff = self.start_command_freq
-        return max(ff, key=lambda x:ff[x])
+        return self.start_command_sorted[0][0]
 
     def find_top_full(self, t=10):
         if(t > len(self.full_command_sorted)):
@@ -158,9 +157,9 @@ class FrequencyFile:
             for t in top_full:
                 print("Freq: " + str(t[1]) +  " -> " + str(t[0]))
         elif(type == "start"):
-            top_start = self.find_start_full(N)
+            top_start = self.find_top_start(N)
             for t in top_start:
-                print(t[0])
+                print("Freq: " + str(t[1]) +  " -> " + str(t[0]))
         else:
             print("Type not supported")
     
@@ -198,11 +197,11 @@ class TimeAnalysis:
         self.df = self.remove_no_time_rows()
     
     def remove_no_time_rows(self):
-        return self.df_raw[self.df_raw["Pretty Time"] != "No"]
+        return self.df_raw[self.df_raw["Pretty Time"] != "No"].reset_index(drop=True)
 
     #TODO:day in 2023-02-18 format
     def search_day(self, day):
-        return self.df[ self.df['Pretty Time'].astype(str).str.contains(day)]
+        return self.df[ self.df['Pretty Time'].astype(str).str.contains(day)].reset_index(drop=True)
     
 class SearchFile:
     def __init__(self, file):
@@ -212,19 +211,18 @@ class SearchFile:
         commands = []
         for line in open(self.file, "r"):
             if(a in line):
-                commands.append(line)
+                commands.append(line.replace('\n', ''))
         return commands
 
     def latest(self, a):
         for line in reversed(list(open(self.file))):
             if(a in line):
-                return line
-        return "Not found"
+                return line.replace('\n', '')
 
     def latest_iterator(self, a):
         for line in reversed(list(open(self.file))):
             if(a in line):
-                yield line
+                yield line.replace('\n', '')
 
     def using_latest_iterator(self, a):
         for command in self.latest_iterator(a):
