@@ -3,6 +3,7 @@ from unittest.mock import patch, Mock, mock_open
 import pytest
 import pandas as pd
 import datetime
+import pytz
 
 file = "terminal_tracker/tests/zsh_test.txt"
 
@@ -66,8 +67,22 @@ def test_timeframe_zsh(mock_convert):
         prep = Preprocessing(file, True, "zsh")
         actual = prep.convert_timeframe_zsh()
         expected = [
-            ["lli output #PLT", "1676578148", datetime.datetime(2023, 2, 16, 15, 9, 8), "lli", "output", "PLT"],
-            ["lli output", "1676578148", datetime.datetime(2023, 2, 16, 15, 9, 8), "lli", "output", ""],
+            [
+                "lli output #PLT",
+                "1676578148",
+                datetime.datetime(2023, 2, 16, 20, 9, 8, tzinfo=pytz.utc),
+                "lli",
+                "output",
+                "PLT",
+            ],
+            [
+                "lli output",
+                "1676578148",
+                datetime.datetime(2023, 2, 16, 20, 9, 8, tzinfo=pytz.utc),
+                "lli",
+                "output",
+                "",
+            ],
         ]
         assert actual == expected
 
@@ -85,7 +100,7 @@ ls"""
         expected = [
             ["ls", "No", "No", "ls", "", ""],
             ["history -u #HIST", "No", "No", "history", "-u", "HIST"],
-            ["ls", "1676578148", datetime.datetime(2023, 2, 16, 15, 9, 8), "ls", "", ""],
+            ["ls", "1676578148", datetime.datetime(2023, 2, 16, 20, 9, 8, tzinfo=pytz.utc), "ls", "", ""],
         ]
         assert actual == expected
 

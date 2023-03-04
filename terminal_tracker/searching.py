@@ -3,6 +3,7 @@ from operator import itemgetter
 import pandas as pd
 import datetime
 from argparse import ArgumentParser
+import pytz
 
 
 def argumentparser():
@@ -66,7 +67,7 @@ class Preprocessing:
                 if ":" in time:
                     # TODO: remove?
                     print(line)
-                pretty_time = datetime.datetime.fromtimestamp(int(time))
+                pretty_time = datetime.datetime.fromtimestamp(int(time), tz=pytz.utc)
                 command = sep[1][:].replace('\n', '')
                 command_start = command.split(" ")[0]
                 command_rest = command[len(command_start) + 1 :]
@@ -95,7 +96,7 @@ class Preprocessing:
                 if prev:
                     # TODO: Currently assumes Unix timestamp
                     prev = False
-                    pretty_time = datetime.datetime.fromtimestamp(int(time))
+                    pretty_time = datetime.datetime.fromtimestamp(int(time), tz=pytz.utc)
                 else:
                     time = "No"
                     pretty_time = "No"

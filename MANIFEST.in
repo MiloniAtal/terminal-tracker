@@ -2,10 +2,12 @@ graft terminal_tracker
 
 include LICENSE
 include README.md
+include CONTRIBUTING.md
 
 include .bumpversion.cfg
 include pyproject.toml
 include Makefile
+include .coveragerc
 
 prune .github
 exclude .gitignore
