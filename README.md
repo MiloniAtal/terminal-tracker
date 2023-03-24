@@ -6,6 +6,7 @@ Maintaining and organizing a history of terminal commands executed for a folder/
 ![](https://img.shields.io/github/issues/MiloniAtal/terminal-tracker)
 [![Build Status](https://github.com/MiloniAtal/terminal-tracker/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/MiloniAtal/terminal-tracker/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/MiloniAtal/terminal-tracker/branch/main/graph/badge.svg)](https://codecov.io/gh/MiloniAtal/terminal-tracker)
+[![PyPI](https://img.shields.io/pypi/v/terminal-tracker)](https://pypi.org/project/terminal-tracker/)
 
 ## Overview
 
@@ -19,7 +20,7 @@ This tools helps with analysing, filtering and segregrating your command history
 ## Installing
 
 ```
-pip install terminal_tracker
+pip install terminal-tracker
 ```
 
 ## Dependencies
@@ -31,7 +32,7 @@ pip install terminal_tracker
 
 ```
 from terminal_tracker import FrequencyFile
-ff = FrequencyFile("zsh_history_file.txt", time=False, shell="zsh")
+ff = FrequencyFile("zsh_history_file.txt", timeframe=False, shell="zsh")
 most_frequent_command = ff.find_most_frequent()
 
 ```
