@@ -24,6 +24,18 @@ class Preprocessing:
         self.df = self.convert()
 
     def convert(self):
+        """This is an example of a module level function.
+
+        Args:
+            param1 (int): The first parameter.
+            param2 (:obj:`str`, optional): The second parameter. Defaults to None.
+                Second line of description should be indented.
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Returns:
+            bool: True if successful, False otherwise.
+        """
         if self.timeframe:
             return self.convert_timeframe()
         else:

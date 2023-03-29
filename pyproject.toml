@@ -51,7 +51,8 @@ develop = [
     "pandas",
     "pytz",
     "sphinx",
-    "recommonmark"
+    "recommonmark",
+    "sphinxcontrib-napoleon"
 ]
 
 [tool.black]
