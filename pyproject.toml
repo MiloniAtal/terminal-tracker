@@ -49,7 +49,9 @@ develop = [
     "twine",
     "wheel",
     "pandas",
-    "pytz"
+    "pytz",
+    "sphinx",
+    "recommonmark"
 ]
 
 [tool.black]
