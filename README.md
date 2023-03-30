@@ -7,7 +7,8 @@ Maintaining and organizing a history of terminal commands executed for a folder/
 [![Build Status](https://github.com/MiloniAtal/terminal-tracker/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/MiloniAtal/terminal-tracker/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/MiloniAtal/terminal-tracker/branch/main/graph/badge.svg)](https://codecov.io/gh/MiloniAtal/terminal-tracker)
 [![PyPI](https://img.shields.io/pypi/v/terminal-tracker)](https://pypi.org/project/terminal-tracker/)
-
+[![Documentation Status](https://readthedocs.org/projects/terminal-tracker/badge/?version=latest)](https://terminal-tracker.readthedocs.io/en/latest/?badge=latest)
+    
 ## Overview
 
 This tools helps with analysing, filtering and segregrating your command history. It also provides functions to support storing of this history in a better format, that can be used share with people or used in future. It recommends commands (based of length of command and frequency of use) that should have an alias. 
