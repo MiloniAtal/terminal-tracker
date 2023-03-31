@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>terminal_tracker package &mdash; terminal-tracker 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="terminal_tracker" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            terminal-tracker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">terminal_tracker</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">terminal_tracker package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.searching">terminal_tracker.searching module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.FrequencyFile"><code class="docutils literal notranslate"><span class="pre">FrequencyFile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.Preprocessing"><code class="docutils literal notranslate"><span class="pre">Preprocessing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.SearchFile"><code class="docutils literal notranslate"><span class="pre">SearchFile</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.Tags"><code class="docutils literal notranslate"><span class="pre">Tags</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.TimeAnalysis"><code class="docutils literal notranslate"><span class="pre">TimeAnalysis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.argumentparser"><code class="docutils literal notranslate"><span class="pre">argumentparser()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">terminal-tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">terminal_tracker</a></li>
+      <li class="breadcrumb-item active">terminal_tracker package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/terminal_tracker.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="terminal-tracker-package">
+<h1>terminal_tracker package<a class="headerlink" href="#terminal-tracker-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-terminal_tracker.searching">
+<span id="terminal-tracker-searching-module"></span><h2>terminal_tracker.searching module<a class="headerlink" href="#module-terminal_tracker.searching" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">FrequencyFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zsh'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.calc_full_command_freq">
+<span class="sig-name descname"><span class="pre">calc_full_command_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.calc_full_command_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.calc_full_command_freq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.calc_start_command_freq">
+<span class="sig-name descname"><span class="pre">calc_start_command_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.calc_start_command_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.calc_start_command_freq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_most_frequent">
+<span class="sig-name descname"><span class="pre">find_most_frequent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_most_frequent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_most_frequent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_most_frequent_start">
+<span class="sig-name descname"><span class="pre">find_most_frequent_start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_most_frequent_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_most_frequent_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_top_full">
+<span class="sig-name descname"><span class="pre">find_top_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_top_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_top_full" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_top_start">
+<span class="sig-name descname"><span class="pre">find_top_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_top_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_top_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.print_top">
+<span class="sig-name descname"><span class="pre">print_top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'full'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.print_top"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.print_top" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.recommend_alias">
+<span class="sig-name descname"><span class="pre">recommend_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.recommend_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.recommend_alias" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">Preprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zsh'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is an example of a module level function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>param1</strong> (<em>int</em>) – The first parameter.</p></li>
+<li><p><strong>param2</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – The second parameter. Defaults to None.
+Second line of description should be indented.</p></li>
+<li><p><strong>*args</strong> – Variable length argument list.</p></li>
+<li><p><strong>**kwargs</strong> – Arbitrary keyword arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_no_timeframe">
+<span class="sig-name descname"><span class="pre">convert_no_timeframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_no_timeframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_no_timeframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_timeframe">
+<span class="sig-name descname"><span class="pre">convert_timeframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_timeframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_timeframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_timeframe_bash">
+<span class="sig-name descname"><span class="pre">convert_timeframe_bash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_timeframe_bash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_timeframe_bash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_timeframe_zsh">
+<span class="sig-name descname"><span class="pre">convert_timeframe_zsh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_timeframe_zsh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_timeframe_zsh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">SearchFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.find" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.latest">
+<span class="sig-name descname"><span class="pre">latest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.latest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.latest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.latest_iterator">
+<span class="sig-name descname"><span class="pre">latest_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.latest_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.latest_iterator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.using_latest_iterator">
+<span class="sig-name descname"><span class="pre">using_latest_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.using_latest_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.using_latest_iterator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Tags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">Tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Tags.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Tags.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Tags.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.Tags.search_df">
+<span class="sig-name descname"><span class="pre">search_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Tags.search_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Tags.search_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.searching.TimeAnalysis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">TimeAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#TimeAnalysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.TimeAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.TimeAnalysis.remove_no_time_rows">
+<span class="sig-name descname"><span class="pre">remove_no_time_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#TimeAnalysis.remove_no_time_rows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.TimeAnalysis.remove_no_time_rows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.searching.TimeAnalysis.search_day">
+<span class="sig-name descname"><span class="pre">search_day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#TimeAnalysis.search_day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.TimeAnalysis.search_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terminal_tracker.searching.argumentparser">
+<span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">argumentparser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#argumentparser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.argumentparser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-terminal_tracker">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-terminal_tracker" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="terminal_tracker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Miloni Atal.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
