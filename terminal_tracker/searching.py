@@ -7,6 +7,12 @@ import pytz
 
 
 def argumentparser():
+    """This function will help to make the library run most commands directly from the command line
+
+    Todo:
+        * Make it usable and complete
+
+    """
     parser = ArgumentParser()
     parser.add_argument("-f", "--file", help="Path to history file")
     parser.add_argument("-s", "--shell", choices=["bash", "zsh"], default="zsh", help="The shell being used")
@@ -15,33 +21,34 @@ def argumentparser():
     return args
 
 
-# remove_duplicates=False
 class Preprocessing:
+    """
+    This class helps in preprocessing the history files
+
+    Attributes:
+        file (str): path to the history file
+        timeframe (bool): whether time values are present in the history file
+        shell (str): "zsh" or "bash"
+        df (pandas.DataFrame):
+            Columns:
+                Command(str), Main Command (str), Arguments (str), Tags (str)
+            Optional Columns:
+                Time (str), Pretty Time (datetime.datetime)
+    """
+
     def __init__(self, file, timeframe=False, shell="zsh"):
         self.file = file
         self.timeframe = timeframe
         self.shell = shell
-        self.df = self.convert()
+        self.df = self._convert()
 
-    def convert(self):
-        """This is an example of a module level function.
-
-        Args:
-            param1 (int): The first parameter.
-            param2 (:obj:`str`, optional): The second parameter. Defaults to None.
-                Second line of description should be indented.
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
-
-        Returns:
-            bool: True if successful, False otherwise.
-        """
+    def _convert(self):
         if self.timeframe:
-            return self.convert_timeframe()
+            return self._convert_timeframe()
         else:
-            return self.convert_no_timeframe()
+            return self._convert_no_timeframe()
 
-    def convert_no_timeframe(self):
+    def _convert_no_timeframe(self):
         data = []
         for command in open(self.file, "r"):
             command = command.replace('\n', '')
@@ -60,16 +67,16 @@ class Preprocessing:
         df = pd.DataFrame(data, columns=columns)
         return df
 
-    def convert_timeframe(self):
+    def _convert_timeframe(self):
         if self.shell == "zsh":
-            data = self.convert_timeframe_zsh()
+            data = self._convert_timeframe_zsh()
         elif self.shell == "bash":
-            data = self.convert_timeframe_bash()
+            data = self._convert_timeframe_bash()
         columns = ["Command", "Time", "Pretty Time", "Main Command", "Arguments", "Tags"]
         df = pd.DataFrame(data, columns=columns)
         return df
 
-    def convert_timeframe_zsh(self):
+    def _convert_timeframe_zsh(self):
         data = []
         for line in open(self.file, "r"):
             sep = line.split(";")
@@ -97,7 +104,7 @@ class Preprocessing:
                 print("Ignoring:" + str(line))
         return data
 
-    def convert_timeframe_bash(self):
+    def _convert_timeframe_bash(self):
         data = []
         prev = False
         for line in open(self.file, "r"):
@@ -127,8 +134,22 @@ class Preprocessing:
         return data
 
 
-# Only handles without timeframe, no tags?
 class FrequencyFile:
+    """This class helps to calculate the frequencies of the commands
+
+    Attributes:
+        file (str): path to the history file
+        timeframe (bool): whether time values are present in the history file
+        shell (str): "zsh" or "bash"
+        full_command_freq (dic): Frequency of each "full" command
+        start_command_freq (dic): Frequency of each "start" command
+        full_command_freq (list): Frequency of each "full" command in order of decreasing frequency
+        start_command_freq (dic): Frequency of each "start" command in order of decreasing frequency
+
+    Todo:
+        * Only works with files without timeframe and tags
+    """
+
     def __init__(self, file, timeframe=False, shell="zsh"):
         self.file = file
         self.timeframe = timeframe
@@ -139,12 +160,24 @@ class FrequencyFile:
         self.start_command_sorted = sorted(self.start_command_freq.items(), key=itemgetter(1), reverse=True)
 
     def calc_full_command_freq(self):
+        """
+        Calculates the frequency of each "full" command
+
+        Returns:
+            dic: Frequency of each "full" command
+        """
         command_frequency = defaultdict(lambda: 0)
         for line in open(self.file, "r"):
             command_frequency[line.replace('\n', '')] += 1
         return command_frequency
 
     def calc_start_command_freq(self):
+        """
+        Calculates the frequency of each "start" command
+
+        Returns:
+            dic: Frequency of each "start" command
+        """
         command_frequency = defaultdict(lambda: 0)
         for line in open(self.file, "r"):
             words = line.split(" ")
@@ -152,22 +185,59 @@ class FrequencyFile:
         return command_frequency
 
     def find_most_frequent(self):
+        """
+        Finds the most frequent "full" command
+
+        Returns:
+            str: most frequent "full" command
+        """
         return self.full_command_sorted[0][0]
 
     def find_most_frequent_start(self):
+        """
+        Finds the most frequent "start" command
+
+        Returns:
+            str: most frequent "start" command
+        """
         return self.start_command_sorted[0][0]
 
     def find_top_full(self, t=10):
+        """
+        Finds the top "t" most frequent "full" command
+
+        Args:
+            t (int): Number of commands
+
+        Returns:
+            list: top "t" most frequent "full" command
+        """
         if t > len(self.full_command_sorted):
             return self.full_command_sorted
         return self.full_command_sorted[:t]
 
     def find_top_start(self, t=10):
+        """
+        Finds the top "t" most frequent "start" command
+
+        Args:
+            t (int): Number of commands
+
+        Returns:
+            list: top "t" most frequent "start" command
+        """
         if t > len(self.start_command_sorted):
             return self.start_command_sorted
         return self.start_command_sorted[:t]
 
     def print_top(self, type="full", N=10):
+        """
+        Helper function to print the most frequent commands
+
+        Args:
+            N (int): Number of commands
+            type (str): "full" or "start"
+        """
         if type == "full":
             top_full = self.find_top_full(N)
             for t in top_full:
@@ -180,6 +250,14 @@ class FrequencyFile:
             print("Type not supported")
 
     def recommend_alias(self, weight_freq=0.5, weight_len=0.5):
+        """
+        Recommends functions that should have an alias based on length and
+        frequency of command usage
+
+        Args:
+            weight_freq (float): Weight given to frequency of command
+            weight_len (float): Weight given to lenght of command
+        """
         top = self.find_top_full()
         max_score = 0
         max_command = ""
@@ -194,38 +272,103 @@ class FrequencyFile:
 
 
 class Tags:
+    """This class helps to search commands with certain tags
+
+    Attributes:
+        prep (Preprocessing): Preprocessing the file using the Preprocessing class
+        df (pandas.DataFrame):
+            Preprocessed dataframe
+            Columns:
+                Command(str), Main Command (str), Arguments (str), Tags (str)
+            Optional Columns:
+                Time (str), Pretty Time (datetime.datetime)
+    """
+
     def __init__(self, file, timeframe, shell):
         self.prep = Preprocessing(file, timeframe, shell)
         self.df = self.prep.df
 
     def search_df(self, a):
+        """
+        Searches for commands with tag "a" in history file and get the entire information
+
+        Args:
+            a (str): Tag
+
+        Returns:
+            pandas.Dataframe: Dataframe with only rows with commands containing the tag
+        """
         return self.df[self.df["Tags"].str.contains(a, case=False, na=False)]
 
     def search(self, a):
+        """
+        Searches for commands with tag "a" in history file and get only the commands
+
+        Args:
+            a (str): Tag
+
+        Returns:
+            list: Commands containing the tag "a"
+        """
         df = self.search_df(a)
         return df["Command"].values.tolist()
 
 
 class TimeAnalysis:
-    # TODO: reject files with no timeframe
+    """This class helps to search commands with certain tags
+
+    Attributes:
+        prep (Preprocessing): Preprocessing the file using the Preprocessing class
+        df (pandas.DataFrame):
+            Preprocessed dataframe
+            Columns:
+                Command(str), Main Command (str), Arguments (str), Tags (str), Time (str), Pretty Time (datetime.datetime)
+
+    Todo:
+        * reject files with no timeframe
+    """
+
     def __init__(self, file, shell):
         self.prep = Preprocessing(file, True, shell)
-        self.df_raw = self.prep.df
-        self.df = self.remove_no_time_rows()
+        self._df_raw = self.prep.df
+        self.df = self._remove_no_time_rows()
 
-    def remove_no_time_rows(self):
-        return self.df_raw[self.df_raw["Pretty Time"] != "No"].reset_index(drop=True)
+    def _remove_no_time_rows(self):
+        return self._df_raw[self._df_raw["Pretty Time"] != "No"].reset_index(drop=True)
 
-    # TODO:day in 2023-02-18 format
     def search_day(self, day):
+        """Finds commands that were executed on the given day
+
+        Args:
+            day (str): Day in 2023-02-18 format
+
+        Returns:
+            pandas.DataFrame: Dataframe containing rows that were executed on the day
+
+        """
         return self.df[self.df['Pretty Time'].astype(str).str.contains(day)].reset_index(drop=True)
 
 
 class SearchFile:
+    """This is a simple search class
+    Attributes:
+        file (str): path to the history file
+    Todo:
+        * Move to using the Preprocessing class
+    """
+
     def __init__(self, file):
         self.file = file
 
     def find(self, a):
+        """Finds all commands containing the word
+
+        Args:
+            a (str): word
+
+        Returns:
+            list: commands containing the word
+        """
         commands = []
         for line in open(self.file, "r"):
             if a in line:
@@ -233,16 +376,35 @@ class SearchFile:
         return commands
 
     def latest(self, a):
+        """Finds the latest command containing the word
+
+        Args:
+            a (str): word
+        Returns:
+            str: the latest command containing the word
+        """
         for line in reversed(list(open(self.file))):
             if a in line:
                 return line.replace('\n', '')
 
     def latest_iterator(self, a):
+        """Iterator that finds the latest commands containing the word
+
+        Args:
+            a (str): word
+        Yields:
+            str: commands
+        """
         for line in reversed(list(open(self.file))):
             if a in line:
                 yield line.replace('\n', '')
 
     def using_latest_iterator(self, a):
+        """Printing the latest commands containing the word
+
+        Args:
+            a (str): word
+        """
         for command in self.latest_iterator(a):
             print(command)
 

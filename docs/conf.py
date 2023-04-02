@@ -27,8 +27,10 @@ extensions = [
     "sphinx.ext.viewcode", 
     "sphinx.ext.napoleon", 
     "sphinx.ext.autosummary",
-    "sphinx.ext.autodoc"
+    "sphinx.ext.autodoc",
+    "sphinx.ext.todo"
     ]
+todo_include_todos = True
 autodoc_mock_imports = ["pandas", "pytz"]
 source_suffix = [".rst", ".md"]
 templates_path = ['_templates']
