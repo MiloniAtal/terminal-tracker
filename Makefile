@@ -105,9 +105,9 @@ TMPREPO=/tmp/docs/terminal-tracker
 
 pages: 
 	rm -rf $(TMPREPO)
-	git clone -b gh-pages git@github.com:pmorissette/bt.git $(TMPREPO)
+	git clone -b gh-pages git@github.com:MiloniAtal/terminal-tracker.git $(TMPREPO)
 	rm -rf $(TMPREPO)/*
-	cp -r docs/build/html/* $(TMPREPO)
+	cp -r docs/_build/html/* $(TMPREPO)
 	cd $(TMPREPO);\
 	git add -A ;\
 	git commit -a -m 'auto-updating docs' ;\
