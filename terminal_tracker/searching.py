@@ -263,7 +263,6 @@ class FrequencyFile:
         max_command = ""
         for value in top:
             t, f = value
-            print(t, f)
             score = len(t) * weight_len + f * weight_freq
             if score > max_score:
                 max_score = score
@@ -322,7 +321,8 @@ class TimeAnalysis:
         df (pandas.DataFrame):
             Preprocessed dataframe
             Columns:
-                Command(str), Main Command (str), Arguments (str), Tags (str), Time (str), Pretty Time (datetime.datetime)
+                Command(str), Main Command (str), Arguments (str), Tags (str),
+                Time (str), Pretty Time (datetime.datetime)
 
     Todo:
         * reject files with no timeframe
