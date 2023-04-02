@@ -42,6 +42,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">terminal_tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -68,25 +69,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>.. terminal-tracker documentation master file, created by
-sphinx-quickstart on Wed Mar 29 17:06:38 2023.
-You can adapt this file completely to your liking, but it should at least
-contain the root <code class="docutils literal notranslate"><span class="pre">toctree</span></code> directive.</p>
-<section id="welcome-to-terminal-tracker-s-documentation">
+  <section id="welcome-to-terminal-tracker-s-documentation">
 <h1>Welcome to terminal-tracker’s documentation!<a class="headerlink" href="#welcome-to-terminal-tracker-s-documentation" title="Permalink to this heading">¶</a></h1>
-<section id="this-is-the-first-header">
-<h2>This is the first header<a class="headerlink" href="#this-is-the-first-header" title="Permalink to this heading">¶</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>This tools helps with analysing, filtering and segregrating your command history. It also provides functions to support storing of this history in a better format, that can be used share with people or used in future. It recommends commands (based of length of command and frequency of use) that should have an alias.</p>
+</section>
+<section id="main-features">
+<h2>Main features<a class="headerlink" href="#main-features" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>1</p></li>
-<li><p>2</p></li>
-<li><p>3</p></li>
-<li><p>4</p></li>
-<li><p>5</p></li>
+<li><p>Recommends commands that should have an alias.</p></li>
+<li><p>It provides support for both zsh and bash shells.</p></li>
+<li><p>Nice format to store and share history</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Some note</p>
+</section>
+<section id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">terminal</span><span class="o">-</span><span class="n">tracker</span>
+</pre></div>
 </div>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>pandas</p></li>
+<li><p>pytz</p></li>
+</ul>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">terminal_tracker</span> <span class="kn">import</span> <span class="n">FrequencyFile</span>
+<span class="n">ff</span> <span class="o">=</span> <span class="n">FrequencyFile</span><span class="p">(</span><span class="s2">&quot;zsh_history_file.txt&quot;</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="s2">&quot;zsh&quot;</span><span class="p">)</span>
+<span class="n">most_frequent_command</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">find_most_frequent</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="configurations">
+<h2>Configurations<a class="headerlink" href="#configurations" title="Permalink to this heading">¶</a></h2>
+<p>These congifurations will help you to better store your history:</p>
+<section id="zsh">
+<h3>zsh<a class="headerlink" href="#zsh" title="Permalink to this heading">¶</a></h3>
+<p>These should be added to /.zshrc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">HISTFILE</span><span class="o">=~/.</span><span class="n">zsh_history</span>
+<span class="n">export</span> <span class="n">HISTFILESIZE</span><span class="o">=</span><span class="mi">1000000000</span>      <span class="c1"># big big history</span>
+<span class="n">export</span> <span class="n">HISTSIZE</span><span class="o">=</span><span class="mi">1000000000</span>          <span class="c1"># big big history</span>
+<span class="n">setopt</span> <span class="n">INC_APPEND_HISTORY</span>           <span class="c1"># append to history, don&#39;t overwrite it</span>
+<span class="n">setopt</span> <span class="n">EXTENDED_HISTORY</span>
+<span class="n">setopt</span> <span class="n">HIST_FIND_NO_DUPS</span>            <span class="c1"># no duplicate entries</span>
+<span class="n">setopt</span> <span class="n">HIST_IGNORE_ALL_DUPS</span>         <span class="c1"># no duplicate entries</span>
+<span class="n">setopt</span> <span class="n">interactivecomments</span>
+</pre></div>
+</div>
+</section>
+<section id="bash">
+<h3>bash<a class="headerlink" href="#bash" title="Permalink to this heading">¶</a></h3>
+<p>These should be added to /.bashrc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">HISTCONTROL</span><span class="o">=</span><span class="n">ignoredups</span><span class="p">:</span><span class="n">erasedups</span>  <span class="c1"># no duplicate entries</span>
+<span class="n">export</span> <span class="n">HISTSIZE</span><span class="o">=</span><span class="mi">100000</span>                   <span class="c1"># big big history</span>
+<span class="n">export</span> <span class="n">HISTFILESIZE</span><span class="o">=</span><span class="mi">100000</span>               <span class="c1"># big big history</span>
+<span class="n">shopt</span> <span class="o">-</span><span class="n">s</span> <span class="n">histappend</span>                      <span class="c1"># append to history, don&#39;t overwrite it</span>
+
+<span class="c1"># Save and reload the history after each command finishes</span>
+<span class="n">export</span> <span class="n">PROMPT_COMMAND</span><span class="o">=</span><span class="s2">&quot;history -a; history -c; history -r; $PROMPT_COMMAND&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="coverage-and-tests">
+<h2>Coverage and Tests<a class="headerlink" href="#coverage-and-tests" title="Permalink to this heading">¶</a></h2>
+<p>Tests and coverage can be run using these simple make commands</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">coverage</span>
+<span class="n">make</span> <span class="n">test</span>
+</pre></div>
+</div>
+</section>
+<section id="contributing-to-terminal-tracker">
+<h2>Contributing to terminal_tracker<a class="headerlink" href="#contributing-to-terminal-tracker" title="Permalink to this heading">¶</a></h2>
+<p>All contributions, bug reports, bug fixes, documentation improvements, enhancements, and ideas are welcome.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -105,6 +164,15 @@ contain the root <code class="docutils literal notranslate"><span class="pre">to
 <li class="toctree-l3"><a class="reference internal" href="terminal_tracker.html#module-terminal_tracker">Module contents</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#getting-started-notebooks">Getting started notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#most-frequently-used">Most Frequently Used</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#tags">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#time-analysis">Time Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#searching">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#preprocessor">Preprocessor</a></li>
 </ul>
 </li>
 </ul>
