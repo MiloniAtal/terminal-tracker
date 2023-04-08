@@ -1,7 +1,5 @@
 from terminal_tracker import FrequencyFile
-from terminal_tracker import Preprocessing, Tags
-from unittest.mock import Mock
-
+from terminal_tracker import Tags
 
 ff = FrequencyFile("terminal_tracker/tests/zsh_test.txt", False, "zsh")
 

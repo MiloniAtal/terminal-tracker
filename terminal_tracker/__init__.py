@@ -1,2 +1,6 @@
 from ._version import __version__
-from .searching import Preprocessing, Tags, FrequencyFile, SearchFile, TimeAnalysis
+from .searching import SearchFile
+from .frequency import FrequencyFile
+from .time import TimeAnalysis
+from .preprocess import Preprocessing
+from .tag import Tags

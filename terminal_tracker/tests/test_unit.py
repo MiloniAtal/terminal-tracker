@@ -8,14 +8,14 @@ import pytz
 file = "terminal_tracker/tests/zsh_test.txt"
 
 
-@patch('terminal_tracker.searching.Preprocessing')
+@patch('terminal_tracker.preprocess.Preprocessing')
 def test_convert(mock_prep):
     p = Tags(file, False, "zsh")
     mock_prep.assert_called_once()
 
 
-@patch('terminal_tracker.searching.Preprocessing._convert_timeframe')
-@patch('terminal_tracker.searching.Preprocessing._convert_no_timeframe')
+@patch('terminal_tracker.preprocess.Preprocessing._convert_timeframe')
+@patch('terminal_tracker.preprocess.Preprocessing._convert_no_timeframe')
 def test_convert(mock_no_tf, mock_tf):
     p = Preprocessing(file, False, "zsh")
     assert mock_no_tf.call_count == 1
@@ -38,9 +38,9 @@ def test_convert_no_timeframe():
         assert expected.equals(actual)
 
 
-@patch('terminal_tracker.searching.Preprocessing._convert_timeframe_bash')
-@patch('terminal_tracker.searching.Preprocessing._convert_timeframe_zsh')
-@patch('terminal_tracker.searching.Preprocessing._convert')
+@patch('terminal_tracker.preprocess.Preprocessing._convert_timeframe_bash')
+@patch('terminal_tracker.preprocess.Preprocessing._convert_timeframe_zsh')
+@patch('terminal_tracker.preprocess.Preprocessing._convert')
 def test_timeframe(mock_convert, mock_zsh, mock_bash):
     data = [["lli output #PLT", "lli", "output", "1676578148", "2023-02-16 15:09:08", "PLT"]]
     columns = ["Command", "Time", "Pretty Time", "Main Command", "Arguments", "Tags"]
@@ -58,7 +58,7 @@ def test_timeframe(mock_convert, mock_zsh, mock_bash):
     assert mock_bash.call_count == 1
 
 
-@patch('terminal_tracker.searching.Preprocessing._convert')
+@patch('terminal_tracker.preprocess.Preprocessing._convert')
 def test_timeframe_zsh(mock_convert):
     file_content_mock = """: 1676578148:0;lli output #PLT
 : 1676578148:0;lli output"""
@@ -87,7 +87,7 @@ def test_timeframe_zsh(mock_convert):
         assert actual == expected
 
 
-@patch('terminal_tracker.searching.Preprocessing._convert')
+@patch('terminal_tracker.preprocess.Preprocessing._convert')
 def test_timeframe_bash(mock_convert):
     file_content_mock = """ls
 history -u #HIST
@@ -171,8 +171,8 @@ git stash"""
 
 
 @patch('builtins.print')
-@patch('terminal_tracker.searching.FrequencyFile.find_top_start')
-@patch('terminal_tracker.searching.FrequencyFile.find_top_full')
+@patch('terminal_tracker.frequency.FrequencyFile.find_top_start')
+@patch('terminal_tracker.frequency.FrequencyFile.find_top_full')
 def test_print_top(mock_full, mock_start, mock_print):
     mock_full.return_value = [("lli output", 1)]
     mock_start.return_value = [("lli", 1)]
@@ -188,7 +188,7 @@ def test_print_top(mock_full, mock_start, mock_print):
         assert mock_print.call_args.args == ("Type not supported",)
 
 
-@patch('terminal_tracker.searching.FrequencyFile.find_top_full')
+@patch('terminal_tracker.frequency.FrequencyFile.find_top_full')
 def test_recommend_alias(mock_full):
     mock_full.return_value = [("dune exec -- bin/main.exe -l lib/test.mc > output", 3), ("lli output", 2)]
     file_content_mock = """dune exec -- bin/main.exe -l lib/test.mc > output
@@ -266,7 +266,7 @@ def test_print_top(mock_iterator, mock_print):
         assert mock_print.call_args.args == ("lli output",)
 
 
-@patch('terminal_tracker.searching.Preprocessing')
+@patch('terminal_tracker.preprocess.Preprocessing')
 def test_timeanalysis_remove(mock_prep):
     data_raw = [
         ["ls", "No", "No", "ls", "", ""],
@@ -295,8 +295,8 @@ def test_timeanalysis_remove(mock_prep):
     assert expected.equals(actual)
 
 
-@patch('terminal_tracker.searching.TimeAnalysis._remove_no_time_rows')
-@patch('terminal_tracker.searching.Preprocessing')
+@patch('terminal_tracker.time.TimeAnalysis._remove_no_time_rows')
+@patch('terminal_tracker.preprocess.Preprocessing')
 def test_search_day(mock_prep, mock_remove):
     data_raw = [
         ["ls", "1676578148", datetime.datetime(2023, 2, 16, 15, 9, 8), "ls", "", ""],
