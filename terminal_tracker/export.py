@@ -1,11 +1,16 @@
-import pandas as pd
 from . import preprocess
+from . import tag
+from . import timeanalysis
 
 
 class Export:
     def __init__(self, file, timeframe, shell):
         self.prep = preprocess.Preprocessing(file, timeframe, shell)
         self.df = self.prep.df
+        self.tag = tag.Tags(file, timeframe, shell)
+        self.timeframe = timeframe
+        if self.timeframe:
+            self.time = timeanalysis.TimeAnalysis(file, shell)
 
     def sort_by(self, way):
         if way == "Start Command":
@@ -25,6 +30,16 @@ class Export:
             self.df = collated_df
         else:
             raise ("Cannot sort in the requested manner")
+
+    def pick(self, category, value):
+        if category == "tag":
+            self.df = self.tag.search_df(value)
+
+        elif category == "time" and self.timeframe:
+            self.df = self.time.search_day(value)
+
+        else:
+            raise ("Cannot pick in the requested manner")
 
     def csv(self, filename):
         self.df.to_csv(filename)

@@ -295,7 +295,7 @@ def test_timeanalysis_remove(mock_prep):
     assert expected.equals(actual)
 
 
-@patch('terminal_tracker.time.TimeAnalysis._remove_no_time_rows')
+@patch('terminal_tracker.timeanalysis.TimeAnalysis._remove_no_time_rows')
 @patch('terminal_tracker.preprocess.Preprocessing')
 def test_search_day(mock_prep, mock_remove):
     data_raw = [
