@@ -28,7 +28,7 @@ class TimeAnalysis:
         """Finds commands that were executed on the given day
 
         Args:
-            day (str): Day in 2023-02-18 format
+            day (str): Day in YYYY-MM-DD format
 
         Returns:
             pandas.DataFrame: Dataframe containing rows that were executed on the day
