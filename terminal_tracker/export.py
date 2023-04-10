@@ -60,7 +60,7 @@ class Export:
             self.df = freq
         elif way == "Collate Main":
             collated_df = self.df.groupby('Main Command')['Command'].apply(set).reset_index()
-            self.df = collated_df
+            self.df = collated_df.sort_values(by='Main Command', ascending=True).reset_index(drop=True)
         else:
             raise ValueError("The " + way + " value is not implemented")
 
@@ -78,12 +78,17 @@ class Export:
 
         Raises:
             ValueError: If category is not one of "tag" or "time".
+            Exception: If category is "time", but the file doesnot have time
+                        values
         """
         if category == "tag":
             self.df = self.tag.search_df(value)
 
-        elif category == "time" and self.timeframe:
-            self.df = self.time.search_day(value)
+        elif category == "time":
+            if self.timeframe:
+                self.df = self.time.search_day(value)
+            else:
+                raise Exception("The file doesnot contain time information")
 
         else:
             raise ValueError("The " + category + " value is not implemented")
