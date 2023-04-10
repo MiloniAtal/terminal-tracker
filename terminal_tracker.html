@@ -45,10 +45,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">terminal_tracker</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">terminal_tracker package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.argparser">terminal_tracker.argparser module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.argparser.argumentparser"><code class="docutils literal notranslate"><span class="pre">argumentparser()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.export">terminal_tracker.export module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
 </ul>
@@ -110,21 +106,6 @@
 <h1>terminal_tracker package<a class="headerlink" href="#terminal-tracker-package" title="Permalink to this heading">¶</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="module-terminal_tracker.argparser">
-<span id="terminal-tracker-argparser-module"></span><h2>terminal_tracker.argparser module<a class="headerlink" href="#module-terminal_tracker.argparser" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="terminal_tracker.argparser.argumentparser">
-<span class="sig-prename descclassname"><span class="pre">terminal_tracker.argparser.</span></span><span class="sig-name descname"><span class="pre">argumentparser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/argparser.html#argumentparser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.argparser.argumentparser" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function will help to make the library run most commands directly from the command line</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<ul class="simple">
-<li><p>Make it usable and complete</p></li>
-</ul>
-</div>
-</dd></dl>
-
 </section>
 <section id="module-terminal_tracker.export">
 <span id="terminal-tracker-export-module"></span><h2>terminal_tracker.export module<a class="headerlink" href="#module-terminal_tracker.export" title="Permalink to this heading">¶</a></h2>
@@ -228,7 +209,11 @@ this should be a date string in the format “YYYY-MM-DD”.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If category is not one of “tag” or “time”.</p>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If category is not one of “tag” or “time”.</p></li>
+<li><p><strong>Exception</strong> – If category is “time”, but the file doesnot have time
+    values</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -332,8 +317,8 @@ This method should be used before exporting the dataframe.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">start_command_freq</span></span><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">start_command_freq</span></span><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Frequency of each “start” command in order of decreasing frequency</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -342,7 +327,7 @@ This method should be used before exporting the dataframe.</p>
 </dl>
 </dd></dl>
 
-<div class="admonition-todo admonition" id="id3">
+<div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
 <li><p>Only works with files without timeframe and tags</p></li>
@@ -545,7 +530,7 @@ frequency of command usage</p>
 </dd>
 </dl>
 </div></blockquote>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
 <li><p>Move to using the Preprocessing class</p></li>
@@ -721,7 +706,7 @@ Time (str), Pretty Time (datetime.datetime)</p>
 </dl>
 </dd></dl>
 
-<div class="admonition-todo admonition" id="id5">
+<div class="admonition-todo admonition" id="id4">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
 <li><p>reject files with no timeframe</p></li>

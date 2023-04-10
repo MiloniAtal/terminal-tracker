@@ -4,14 +4,6 @@ terminal\_tracker package
 Submodules
 ----------
 
-terminal\_tracker.argparser module
-----------------------------------
-
-.. automodule:: terminal_tracker.argparser
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 terminal\_tracker.export module
 -------------------------------
 

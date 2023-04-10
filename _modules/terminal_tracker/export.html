@@ -99,8 +99,8 @@
 
 <div class="viewcode-block" id="Export.sort_by"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.sort_by">[docs]</a>    <span class="k">def</span> <span class="nf">sort_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">way</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Sorts the commands in the dataframe using various methods and stores </span>
-<span class="sd">        the sorted commands in the same &quot;df&quot; attribute. </span>
+<span class="sd">        Sorts the commands in the dataframe using various methods and stores</span>
+<span class="sd">        the sorted commands in the same &quot;df&quot; attribute.</span>
 <span class="sd">        This method should be used before exporting the dataframe.</span>
 
 <span class="sd">        Args:</span>
@@ -112,9 +112,9 @@
 <span class="sd">                        &quot;Collate Main&quot;: Group the commands by their start command.</span>
 
 <span class="sd">        Raises:</span>
-<span class="sd">            ValueError: If way is not one of &quot;Start Command&quot;, &quot;Full Command&quot;, </span>
+<span class="sd">            ValueError: If way is not one of &quot;Start Command&quot;, &quot;Full Command&quot;,</span>
 <span class="sd">                        &quot;Start Frequency&quot;, &quot;Full Frequency&quot;, or &quot;Collate Main&quot;.</span>
-<span class="sd">   </span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Start Command&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Main Command&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -130,30 +130,35 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">freq</span>
         <span class="k">elif</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Collate Main&quot;</span><span class="p">:</span>
             <span class="n">collated_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Main Command&#39;</span><span class="p">)[</span><span class="s1">&#39;Command&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">collated_df</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">collated_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Main Command&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The &quot;</span> <span class="o">+</span> <span class="n">way</span> <span class="o">+</span> <span class="s2">&quot; value is not implemented&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Export.pick"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.pick">[docs]</a>    <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Sorts the commands in the dataframe by a specified category and value, </span>
-<span class="sd">        and stores the sorted dataframe in the same &quot;df&quot; attribute. </span>
+<span class="sd">        Sorts the commands in the dataframe by a specified category and value,</span>
+<span class="sd">        and stores the sorted dataframe in the same &quot;df&quot; attribute.</span>
 <span class="sd">        This method should be used before exporting the dataframe.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            category (str): The category to sort by. Must be one of &quot;tag&quot; or &quot;time&quot;.</span>
-<span class="sd">            value (str): The value to filter by. If category is &quot;tag&quot;, </span>
-<span class="sd">                        this should be a tag name. If category is &quot;time&quot;, </span>
+<span class="sd">            value (str): The value to filter by. If category is &quot;tag&quot;,</span>
+<span class="sd">                        this should be a tag name. If category is &quot;time&quot;,</span>
 <span class="sd">                        this should be a date string in the format &quot;YYYY-MM-DD&quot;.</span>
 
 <span class="sd">        Raises:</span>
 <span class="sd">            ValueError: If category is not one of &quot;tag&quot; or &quot;time&quot;.</span>
+<span class="sd">            Exception: If category is &quot;time&quot;, but the file doesnot have time</span>
+<span class="sd">                        values</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">&quot;tag&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">search_df</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-        <span class="k">elif</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">&quot;time&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeframe</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">search_day</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">&quot;time&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeframe</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">search_day</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The file doesnot contain time information&quot;</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The &quot;</span> <span class="o">+</span> <span class="n">category</span> <span class="o">+</span> <span class="s2">&quot; value is not implemented&quot;</span><span class="p">)</span></div>
