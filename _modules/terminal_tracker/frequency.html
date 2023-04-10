@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>terminal_tracker.frequency &mdash; terminal-tracker 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            terminal-tracker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">terminal_tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">terminal-tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">terminal_tracker.frequency</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for terminal_tracker.frequency</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+
+<div class="viewcode-block" id="FrequencyFile"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile">[docs]</a><span class="k">class</span> <span class="nc">FrequencyFile</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class helps to calculate the frequencies of the commands</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        file (str): path to the history file</span>
+<span class="sd">        timeframe (bool): whether time values are present in the history file</span>
+<span class="sd">        shell (str): &quot;zsh&quot; or &quot;bash&quot;</span>
+<span class="sd">        full_command_freq (dic): Frequency of each &quot;full&quot; command</span>
+<span class="sd">        start_command_freq (dic): Frequency of each &quot;start&quot; command</span>
+<span class="sd">        full_command_freq (list): Frequency of each &quot;full&quot; command in order of decreasing frequency</span>
+<span class="sd">        start_command_freq (dic): Frequency of each &quot;start&quot; command in order of decreasing frequency</span>
+
+<span class="sd">    Todo:</span>
+<span class="sd">        * Only works with files without timeframe and tags</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">timeframe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="s2">&quot;zsh&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeframe</span> <span class="o">=</span> <span class="n">timeframe</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shell</span> <span class="o">=</span> <span class="n">shell</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">full_command_freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_full_command_freq</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_command_freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_start_command_freq</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">full_command_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">full_command_freq</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_command_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_command_freq</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FrequencyFile.calc_full_command_freq"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.calc_full_command_freq">[docs]</a>    <span class="k">def</span> <span class="nf">calc_full_command_freq</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the frequency of each &quot;full&quot; command</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dic: Frequency of each &quot;full&quot; command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">command_frequency</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">):</span>
+            <span class="n">command_frequency</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">command_frequency</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.calc_start_command_freq"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.calc_start_command_freq">[docs]</a>    <span class="k">def</span> <span class="nf">calc_start_command_freq</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the frequency of each &quot;start&quot; command</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dic: Frequency of each &quot;start&quot; command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">command_frequency</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">):</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">command_frequency</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">command_frequency</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.find_most_frequent"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.find_most_frequent">[docs]</a>    <span class="k">def</span> <span class="nf">find_most_frequent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds the most frequent &quot;full&quot; command</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: most frequent &quot;full&quot; command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_command_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.find_most_frequent_start"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.find_most_frequent_start">[docs]</a>    <span class="k">def</span> <span class="nf">find_most_frequent_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds the most frequent &quot;start&quot; command</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: most frequent &quot;start&quot; command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_command_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.find_top_full"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.find_top_full">[docs]</a>    <span class="k">def</span> <span class="nf">find_top_full</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds the top &quot;t&quot; most frequent &quot;full&quot; command</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            t (int): Number of commands</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: top &quot;t&quot; most frequent &quot;full&quot; command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">full_command_sorted</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_command_sorted</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_command_sorted</span><span class="p">[:</span><span class="n">t</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.find_top_start"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.find_top_start">[docs]</a>    <span class="k">def</span> <span class="nf">find_top_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds the top &quot;t&quot; most frequent &quot;start&quot; command</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            t (int): Number of commands</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: top &quot;t&quot; most frequent &quot;start&quot; command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_command_sorted</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_command_sorted</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_command_sorted</span><span class="p">[:</span><span class="n">t</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.print_top"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.print_top">[docs]</a>    <span class="k">def</span> <span class="nf">print_top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper function to print the most frequent commands</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            N (int): Number of commands</span>
+<span class="sd">            type (str): &quot;full&quot; or &quot;start&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
+            <span class="n">top_full</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_top_full</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">top_full</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Freq: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+            <span class="n">top_start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_top_start</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">top_start</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Freq: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type not supported&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FrequencyFile.recommend_alias"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.frequency.FrequencyFile.recommend_alias">[docs]</a>    <span class="k">def</span> <span class="nf">recommend_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight_freq</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">weight_len</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recommends functions that should have an alias based on length and</span>
+<span class="sd">        frequency of command usage</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            weight_freq (float): Weight given to frequency of command</span>
+<span class="sd">            weight_len (float): Weight given to lenght of command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_top_full</span><span class="p">()</span>
+        <span class="n">max_score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">max_command</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">top</span><span class="p">:</span>
+            <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">weight_len</span> <span class="o">+</span> <span class="n">f</span> <span class="o">*</span> <span class="n">weight_freq</span>
+            <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">max_score</span><span class="p">:</span>
+                <span class="n">max_score</span> <span class="o">=</span> <span class="n">score</span>
+                <span class="n">max_command</span> <span class="o">=</span> <span class="n">t</span>
+        <span class="k">return</span> <span class="n">max_command</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Miloni Atal.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -45,13 +45,32 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">terminal_tracker</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">terminal_tracker package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.argparser">terminal_tracker.argparser module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.argparser.argumentparser"><code class="docutils literal notranslate"><span class="pre">argumentparser()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.export">terminal_tracker.export module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.frequency">terminal_tracker.frequency module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.frequency.FrequencyFile"><code class="docutils literal notranslate"><span class="pre">FrequencyFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.preprocess">terminal_tracker.preprocess module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.preprocess.Preprocessing"><code class="docutils literal notranslate"><span class="pre">Preprocessing</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.searching">terminal_tracker.searching module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.FrequencyFile"><code class="docutils literal notranslate"><span class="pre">FrequencyFile</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.Preprocessing"><code class="docutils literal notranslate"><span class="pre">Preprocessing</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.SearchFile"><code class="docutils literal notranslate"><span class="pre">SearchFile</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.Tags"><code class="docutils literal notranslate"><span class="pre">Tags</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.TimeAnalysis"><code class="docutils literal notranslate"><span class="pre">TimeAnalysis</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.searching.argumentparser"><code class="docutils literal notranslate"><span class="pre">argumentparser()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.tag">terminal_tracker.tag module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.tag.Tags"><code class="docutils literal notranslate"><span class="pre">Tags</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker.timeanalysis">terminal_tracker.timeanalysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#terminal_tracker.timeanalysis.TimeAnalysis"><code class="docutils literal notranslate"><span class="pre">TimeAnalysis</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-terminal_tracker">Module contents</a></li>
@@ -92,147 +111,640 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 </section>
+<section id="module-terminal_tracker.argparser">
+<span id="terminal-tracker-argparser-module"></span><h2>terminal_tracker.argparser module<a class="headerlink" href="#module-terminal_tracker.argparser" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="terminal_tracker.argparser.argumentparser">
+<span class="sig-prename descclassname"><span class="pre">terminal_tracker.argparser.</span></span><span class="sig-name descname"><span class="pre">argumentparser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/argparser.html#argumentparser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.argparser.argumentparser" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will help to make the library run most commands directly from the command line</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Make it usable and complete</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-terminal_tracker.export">
+<span id="terminal-tracker-export-module"></span><h2>terminal_tracker.export module<a class="headerlink" href="#module-terminal_tracker.export" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.export.</span></span><span class="sig-name descname"><span class="pre">Export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/export.html#Export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.export.Export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class helps in exporting the history file in a better usable format</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.timeframe">
+<span class="sig-name descname"><span class="pre">timeframe</span></span><a class="headerlink" href="#terminal_tracker.export.Export.timeframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether time values are present in the history file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.shell">
+<span class="sig-name descname"><span class="pre">shell</span></span><a class="headerlink" href="#terminal_tracker.export.Export.shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>“zsh” or “bash”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.df">
+<span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#terminal_tracker.export.Export.df" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Columns:</dt><dd><p>Command(str), Main Command (str), Arguments (str), Tags (str)</p>
+</dd>
+<dt>Optional Columns:</dt><dd><p>Time (str), Pretty Time (datetime.datetime)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#terminal_tracker.export.Export.tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>processed for efficient searching of tags</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#terminal_tracker.tag.Tags" title="terminal_tracker.tag.Tags">Tags</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.time">
+<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#terminal_tracker.export.Export.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>processed for efficient searching of day</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#terminal_tracker.timeanalysis.TimeAnalysis" title="terminal_tracker.timeanalysis.TimeAnalysis">TimeAnalysis</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.csv">
+<span class="sig-name descname"><span class="pre">csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/export.html#Export.csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.export.Export.csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts dataframe to csv file of given name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.excel">
+<span class="sig-name descname"><span class="pre">excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/export.html#Export.excel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.export.Export.excel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts dataframe to excel file of given name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.html">
+<span class="sig-name descname"><span class="pre">html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/export.html#Export.html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.export.Export.html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts dataframe to html file of given name, adds the extension
+“.html” if not present in the filename</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.pick">
+<span class="sig-name descname"><span class="pre">pick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/export.html#Export.pick"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.export.Export.pick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts the commands in the dataframe by a specified category and value,
+and stores the sorted dataframe in the same “df” attribute.
+This method should be used before exporting the dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>category</strong> (<em>str</em>) – The category to sort by. Must be one of “tag” or “time”.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The value to filter by. If category is “tag”,
+this should be a tag name. If category is “time”,
+this should be a date string in the format “YYYY-MM-DD”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If category is not one of “tag” or “time”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.export.Export.sort_by">
+<span class="sig-name descname"><span class="pre">sort_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">way</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/export.html#Export.sort_by"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.export.Export.sort_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sorts the commands in the dataframe using various methods and stores
+the sorted commands in the same “df” attribute.
+This method should be used before exporting the dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>way</strong> (<em>str</em>) – The method to use for sorting. Must be one of the following:,
+“Start Command”: Sort by the start command of each command.
+“Full Command”: Sort by the full command.
+“Start Frequency”: Keep only unique full commands with their frequency.
+“Full Frequency”: Keep only unique start commands with their frequency.
+“Collate Main”: Group the commands by their start command.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If way is not one of “Start Command”, “Full Command”,
+    “Start Frequency”, “Full Frequency”, or “Collate Main”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-terminal_tracker.frequency">
+<span id="terminal-tracker-frequency-module"></span><h2>terminal_tracker.frequency module<a class="headerlink" href="#module-terminal_tracker.frequency" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.frequency.</span></span><span class="sig-name descname"><span class="pre">FrequencyFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zsh'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class helps to calculate the frequencies of the commands</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.file">
+<span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>path to the history file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.timeframe">
+<span class="sig-name descname"><span class="pre">timeframe</span></span><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.timeframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether time values are present in the history file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.shell">
+<span class="sig-name descname"><span class="pre">shell</span></span><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>“zsh” or “bash”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.full_command_freq">
+<span class="sig-name descname"><span class="pre">full_command_freq</span></span><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.full_command_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency of each “full” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dic</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.start_command_freq">
+<span class="sig-name descname"><span class="pre">start_command_freq</span></span><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.start_command_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency of each “start” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dic</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">full_command_freq</span></span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency of each “full” command in order of decreasing frequency</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">start_command_freq</span></span><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency of each “start” command in order of decreasing frequency</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dic</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Only works with files without timeframe and tags</p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.calc_full_command_freq">
+<span class="sig-name descname"><span class="pre">calc_full_command_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.calc_full_command_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.calc_full_command_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frequency of each “full” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Frequency of each “full” command</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dic</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.calc_start_command_freq">
+<span class="sig-name descname"><span class="pre">calc_start_command_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.calc_start_command_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.calc_start_command_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frequency of each “start” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Frequency of each “start” command</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dic</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.find_most_frequent">
+<span class="sig-name descname"><span class="pre">find_most_frequent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.find_most_frequent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.find_most_frequent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the most frequent “full” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>most frequent “full” command</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.find_most_frequent_start">
+<span class="sig-name descname"><span class="pre">find_most_frequent_start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.find_most_frequent_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.find_most_frequent_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the most frequent “start” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>most frequent “start” command</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.find_top_full">
+<span class="sig-name descname"><span class="pre">find_top_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.find_top_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.find_top_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the top “t” most frequent “full” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> (<em>int</em>) – Number of commands</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>top “t” most frequent “full” command</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.find_top_start">
+<span class="sig-name descname"><span class="pre">find_top_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.find_top_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.find_top_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the top “t” most frequent “start” command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>t</strong> (<em>int</em>) – Number of commands</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>top “t” most frequent “start” command</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.print_top">
+<span class="sig-name descname"><span class="pre">print_top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'full'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.print_top"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.print_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to print the most frequent commands</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Number of commands</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – “full” or “start”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.frequency.FrequencyFile.recommend_alias">
+<span class="sig-name descname"><span class="pre">recommend_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/frequency.html#FrequencyFile.recommend_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.frequency.FrequencyFile.recommend_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recommends functions that should have an alias based on length and
+frequency of command usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weight_freq</strong> (<em>float</em>) – Weight given to frequency of command</p></li>
+<li><p><strong>weight_len</strong> (<em>float</em>) – Weight given to lenght of command</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-terminal_tracker.preprocess">
+<span id="terminal-tracker-preprocess-module"></span><h2>terminal_tracker.preprocess module<a class="headerlink" href="#module-terminal_tracker.preprocess" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="terminal_tracker.preprocess.Preprocessing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.preprocess.</span></span><span class="sig-name descname"><span class="pre">Preprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zsh'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/preprocess.html#Preprocessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.preprocess.Preprocessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class helps in preprocessing the history files</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.preprocess.Preprocessing.file">
+<span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#terminal_tracker.preprocess.Preprocessing.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>path to the history file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.preprocess.Preprocessing.timeframe">
+<span class="sig-name descname"><span class="pre">timeframe</span></span><a class="headerlink" href="#terminal_tracker.preprocess.Preprocessing.timeframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether time values are present in the history file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.preprocess.Preprocessing.shell">
+<span class="sig-name descname"><span class="pre">shell</span></span><a class="headerlink" href="#terminal_tracker.preprocess.Preprocessing.shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>“zsh” or “bash”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.preprocess.Preprocessing.df">
+<span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#terminal_tracker.preprocess.Preprocessing.df" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Columns:</dt><dd><p>Command(str), Main Command (str), Arguments (str), Tags (str)</p>
+</dd>
+<dt>Optional Columns:</dt><dd><p>Time (str), Pretty Time (datetime.datetime)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-terminal_tracker.searching">
 <span id="terminal-tracker-searching-module"></span><h2>terminal_tracker.searching module<a class="headerlink" href="#module-terminal_tracker.searching" title="Permalink to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">FrequencyFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zsh'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.calc_full_command_freq">
-<span class="sig-name descname"><span class="pre">calc_full_command_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.calc_full_command_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.calc_full_command_freq" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.calc_start_command_freq">
-<span class="sig-name descname"><span class="pre">calc_start_command_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.calc_start_command_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.calc_start_command_freq" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_most_frequent">
-<span class="sig-name descname"><span class="pre">find_most_frequent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_most_frequent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_most_frequent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_most_frequent_start">
-<span class="sig-name descname"><span class="pre">find_most_frequent_start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_most_frequent_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_most_frequent_start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_top_full">
-<span class="sig-name descname"><span class="pre">find_top_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_top_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_top_full" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.find_top_start">
-<span class="sig-name descname"><span class="pre">find_top_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.find_top_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.find_top_start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.print_top">
-<span class="sig-name descname"><span class="pre">print_top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'full'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.print_top"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.print_top" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.FrequencyFile.recommend_alias">
-<span class="sig-name descname"><span class="pre">recommend_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#FrequencyFile.recommend_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.FrequencyFile.recommend_alias" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">Preprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zsh'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert">
-<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_no_timeframe">
-<span class="sig-name descname"><span class="pre">convert_no_timeframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_no_timeframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_no_timeframe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_timeframe">
-<span class="sig-name descname"><span class="pre">convert_timeframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_timeframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_timeframe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_timeframe_bash">
-<span class="sig-name descname"><span class="pre">convert_timeframe_bash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_timeframe_bash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_timeframe_bash" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Preprocessing.convert_timeframe_zsh">
-<span class="sig-name descname"><span class="pre">convert_timeframe_zsh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Preprocessing.convert_timeframe_zsh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Preprocessing.convert_timeframe_zsh" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">SearchFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a simple search class
+.. attribute:: file</p>
+<blockquote>
+<div><p>path to the history file</p>
+<dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Move to using the Preprocessing class</p></li>
+</ul>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.find">
 <span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.find" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Finds all commands containing the word</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>str</em>) – word</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>commands containing the word</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.latest">
 <span class="sig-name descname"><span class="pre">latest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.latest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.latest" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Finds the latest command containing the word</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>str</em>) – word</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the latest command containing the word</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.latest_iterator">
 <span class="sig-name descname"><span class="pre">latest_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.latest_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.latest_iterator" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Iterator that finds the latest commands containing the word</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>str</em>) – word</p>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>str</em> – commands</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="terminal_tracker.searching.SearchFile.using_latest_iterator">
 <span class="sig-name descname"><span class="pre">using_latest_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#SearchFile.using_latest_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.SearchFile.using_latest_iterator" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Printing the latest commands containing the word</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>str</em>) – word</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
+</section>
+<section id="module-terminal_tracker.tag">
+<span id="terminal-tracker-tag-module"></span><h2>terminal_tracker.tag module<a class="headerlink" href="#module-terminal_tracker.tag" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Tags">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">Tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Tags" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="terminal_tracker.tag.Tags">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.tag.</span></span><span class="sig-name descname"><span class="pre">Tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/tag.html#Tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.tag.Tags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Tags.search">
-<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Tags.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Tags.search" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<p>This class helps to search commands with certain tags</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.tag.Tags.prep">
+<span class="sig-name descname"><span class="pre">prep</span></span><a class="headerlink" href="#terminal_tracker.tag.Tags.prep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preprocessing the file using the Preprocessing class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#terminal_tracker.preprocess.Preprocessing" title="terminal_tracker.preprocess.Preprocessing">Preprocessing</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.tag.Tags.df">
+<span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#terminal_tracker.tag.Tags.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preprocessed dataframe
+Columns:</p>
+<blockquote>
+<div><p>Command(str), Main Command (str), Arguments (str), Tags (str)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Optional Columns:</dt><dd><p>Time (str), Pretty Time (datetime.datetime)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.Tags.search_df">
-<span class="sig-name descname"><span class="pre">search_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#Tags.search_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.Tags.search_df" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="terminal_tracker.tag.Tags.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/tag.html#Tags.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.tag.Tags.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for commands with tag “a” in history file and get only the commands</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>str</em>) – Tag</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Commands containing the tag “a”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.tag.Tags.search_df">
+<span class="sig-name descname"><span class="pre">search_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/tag.html#Tags.search_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.tag.Tags.search_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for commands with tag “a” in history file and get the entire information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>str</em>) – Tag</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataframe with only rows with commands containing the tag</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
+</section>
+<section id="module-terminal_tracker.timeanalysis">
+<span id="terminal-tracker-timeanalysis-module"></span><h2>terminal_tracker.timeanalysis module<a class="headerlink" href="#module-terminal_tracker.timeanalysis" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="terminal_tracker.searching.TimeAnalysis">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">TimeAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#TimeAnalysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.TimeAnalysis" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="terminal_tracker.timeanalysis.TimeAnalysis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">terminal_tracker.timeanalysis.</span></span><span class="sig-name descname"><span class="pre">TimeAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/timeanalysis.html#TimeAnalysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.timeanalysis.TimeAnalysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.TimeAnalysis.remove_no_time_rows">
-<span class="sig-name descname"><span class="pre">remove_no_time_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#TimeAnalysis.remove_no_time_rows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.TimeAnalysis.remove_no_time_rows" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="terminal_tracker.searching.TimeAnalysis.search_day">
-<span class="sig-name descname"><span class="pre">search_day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#TimeAnalysis.search_day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.TimeAnalysis.search_day" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>This class helps to search commands with certain tags</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.timeanalysis.TimeAnalysis.prep">
+<span class="sig-name descname"><span class="pre">prep</span></span><a class="headerlink" href="#terminal_tracker.timeanalysis.TimeAnalysis.prep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preprocessing the file using the Preprocessing class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#terminal_tracker.preprocess.Preprocessing" title="terminal_tracker.preprocess.Preprocessing">Preprocessing</a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="terminal_tracker.searching.argumentparser">
-<span class="sig-prename descclassname"><span class="pre">terminal_tracker.searching.</span></span><span class="sig-name descname"><span class="pre">argumentparser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/searching.html#argumentparser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.searching.argumentparser" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="terminal_tracker.timeanalysis.TimeAnalysis.df">
+<span class="sig-name descname"><span class="pre">df</span></span><a class="headerlink" href="#terminal_tracker.timeanalysis.TimeAnalysis.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preprocessed dataframe
+Columns:</p>
+<blockquote>
+<div><p>Command(str), Main Command (str), Arguments (str), Tags (str),
+Time (str), Pretty Time (datetime.datetime)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>reject files with no timeframe</p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="terminal_tracker.timeanalysis.TimeAnalysis.search_day">
+<span class="sig-name descname"><span class="pre">search_day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terminal_tracker/timeanalysis.html#TimeAnalysis.search_day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terminal_tracker.timeanalysis.TimeAnalysis.search_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds commands that were executed on the given day</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>day</strong> (<em>str</em>) – Day in YYYY-MM-DD format</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataframe containing rows that were executed on the day</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
 
 </section>
 <section id="module-terminal_tracker">

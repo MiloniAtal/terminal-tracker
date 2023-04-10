@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>terminal_tracker.export &mdash; terminal-tracker 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            terminal-tracker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">terminal_tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">terminal-tracker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">terminal_tracker.export</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for terminal_tracker.export</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">preprocess</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">tag</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">timeanalysis</span>
+
+
+<div class="viewcode-block" id="Export"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export">[docs]</a><span class="k">class</span> <span class="nc">Export</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class helps in exporting the history file in a better usable format</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        timeframe (bool): whether time values are present in the history file</span>
+<span class="sd">        shell (str): &quot;zsh&quot; or &quot;bash&quot;</span>
+<span class="sd">        df (pandas.DataFrame):</span>
+<span class="sd">            Columns:</span>
+<span class="sd">                Command(str), Main Command (str), Arguments (str), Tags (str)</span>
+<span class="sd">            Optional Columns:</span>
+<span class="sd">                Time (str), Pretty Time (datetime.datetime)</span>
+<span class="sd">        tag (Tags): processed for efficient searching of tags</span>
+<span class="sd">        time (TimeAnalysis): processed for efficient searching of day</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">timeframe</span><span class="p">,</span> <span class="n">shell</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prep</span> <span class="o">=</span> <span class="n">preprocess</span><span class="o">.</span><span class="n">Preprocessing</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">timeframe</span><span class="p">,</span> <span class="n">shell</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prep</span><span class="o">.</span><span class="n">df</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">Tags</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">timeframe</span><span class="p">,</span> <span class="n">shell</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeframe</span> <span class="o">=</span> <span class="n">timeframe</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeframe</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">timeanalysis</span><span class="o">.</span><span class="n">TimeAnalysis</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">shell</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Export.sort_by"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.sort_by">[docs]</a>    <span class="k">def</span> <span class="nf">sort_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">way</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sorts the commands in the dataframe using various methods and stores </span>
+<span class="sd">        the sorted commands in the same &quot;df&quot; attribute. </span>
+<span class="sd">        This method should be used before exporting the dataframe.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            way (str): The method to use for sorting. Must be one of the following:,</span>
+<span class="sd">                        &quot;Start Command&quot;: Sort by the start command of each command.</span>
+<span class="sd">                        &quot;Full Command&quot;: Sort by the full command.</span>
+<span class="sd">                        &quot;Start Frequency&quot;: Keep only unique full commands with their frequency.</span>
+<span class="sd">                        &quot;Full Frequency&quot;: Keep only unique start commands with their frequency.</span>
+<span class="sd">                        &quot;Collate Main&quot;: Group the commands by their start command.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If way is not one of &quot;Start Command&quot;, &quot;Full Command&quot;, </span>
+<span class="sd">                        &quot;Start Frequency&quot;, &quot;Full Frequency&quot;, or &quot;Collate Main&quot;.</span>
+<span class="sd">   </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Start Command&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Main Command&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Full Command&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Command&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Full Frequency&quot;</span><span class="p">:</span>
+            <span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Command&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+            <span class="n">freq</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Command&#39;</span><span class="p">,</span> <span class="s1">&#39;Frequency&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">freq</span>
+        <span class="k">elif</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Start Frequency&quot;</span><span class="p">:</span>
+            <span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Main Command&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+            <span class="n">freq</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Command&#39;</span><span class="p">,</span> <span class="s1">&#39;Frequency&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">freq</span>
+        <span class="k">elif</span> <span class="n">way</span> <span class="o">==</span> <span class="s2">&quot;Collate Main&quot;</span><span class="p">:</span>
+            <span class="n">collated_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Main Command&#39;</span><span class="p">)[</span><span class="s1">&#39;Command&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">collated_df</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The &quot;</span> <span class="o">+</span> <span class="n">way</span> <span class="o">+</span> <span class="s2">&quot; value is not implemented&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Export.pick"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.pick">[docs]</a>    <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sorts the commands in the dataframe by a specified category and value, </span>
+<span class="sd">        and stores the sorted dataframe in the same &quot;df&quot; attribute. </span>
+<span class="sd">        This method should be used before exporting the dataframe.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            category (str): The category to sort by. Must be one of &quot;tag&quot; or &quot;time&quot;.</span>
+<span class="sd">            value (str): The value to filter by. If category is &quot;tag&quot;, </span>
+<span class="sd">                        this should be a tag name. If category is &quot;time&quot;, </span>
+<span class="sd">                        this should be a date string in the format &quot;YYYY-MM-DD&quot;.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If category is not one of &quot;tag&quot; or &quot;time&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">&quot;tag&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">search_df</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">&quot;time&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeframe</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">search_day</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The &quot;</span> <span class="o">+</span> <span class="n">category</span> <span class="o">+</span> <span class="s2">&quot; value is not implemented&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Export.csv"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts dataframe to csv file of given name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Export.excel"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.excel">[docs]</a>    <span class="k">def</span> <span class="nf">excel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts dataframe to excel file of given name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Export.html"><a class="viewcode-back" href="../../terminal_tracker.html#terminal_tracker.export.Export.html">[docs]</a>    <span class="k">def</span> <span class="nf">html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts dataframe to html file of given name, adds the extension</span>
+<span class="sd">        &quot;.html&quot; if not present in the filename</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;.html&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">filename</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s2">&quot;.html&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Miloni Atal.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
